@@ -1,0 +1,96 @@
+#fixed-menu {
+    position: absolute;
+    top: 1px;
+    left: 0;
+    width: 100%;
+    color: #fff;
+    background: #ffffff;
+    z-index: 1000;
+    /* box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); */
+    /* transition: all 0.3s ease; */
+}
+
+body {
+    background-size: cover;
+}
+
+
+/* register */
+
+.fluid-container .register-box {
+    margin-top: 5rem;
+    margin-bottom: 4.5rem;
+}
+
+.fluid-container .register-box .row .col-md-5 h1 {
+    color: #252a2b;
+    font-weight: bold;
+    font-style: italic;
+    font-size: 38px;
+    margin-top: 60px;
+}
+
+.fluid-container .register-box .row .col-md-5 input {
+    height: 55px;
+    border: 1px solid transparent;
+    background: #ededed;
+    color: #252a2b;
+    padding: 0 20px;
+    font-weight: 500;
+    margin-bottom: 20px;
+}
+
+.fluid-container .register-box .row .col-md-5 input:hover {
+    border-radius: 1px solid grey;
+}
+
+.fluid-container .register-box .row .col-md-5 .gender-radio {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    /* Khoảng cách giữa các nút radio và nhãn */
+}
+
+.fluid-container .register-box .row .col-md-5 input[type="radio"] {
+    width: 16px;
+    height: 16px;
+}
+
+.fluid-container .register-box .row .col-md-5 .gender-radio label {
+    font-size: 16px;
+    color: #333;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: -20px;
+}
+
+.fluid-container .register-box .row .col-md-5 p {
+    color: #9c9c9c;
+    font-size: 14px;
+}
+
+.fluid-container .register-box .row .col-md-5 .event button {
+    padding: 16px 25px;
+}
+
+.back {
+    margin-top: 16px;
+}
+
+.back a {
+    text-decoration: none;
+    color: #252a2b;
+    display: flex;
+    align-items: center;
+    transition: color 0.3s, transform 0.3s;
+}
+
+.back a:hover {
+    color: #ff5733;
+    transform: translateX(-5px);
+}
+
+.back i {
+    margin-right: 16px;
+    /* Khoảng cách giữa biểu tượng mũi tên và văn bản */
+}

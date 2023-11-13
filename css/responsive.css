@@ -1,0 +1,79 @@
+@media (max-width: 767.98px) {
+    #toggle {
+        display: block;
+    }
+    #main-menu {
+        display: none;
+    }
+    #res_web {
+        display: none;
+    }
+    #jh {
+        display: none;
+    }
+    #sea {
+        display: none;
+    }
+    #foot_web {
+        display: none;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 1199.98px) {
+    .fluid-container .container .menu .logo img {
+        max-width: 100%;
+        height: auto;
+        margin: 0 auto
+    }
+    .fluid-container .container .menu .navbar .hien1 .menu_item1 .product-list {
+        left: -90%;
+        width: 280%;
+    }
+    .fluid-container .container .menu .navbar .hien1 .menu_item2 .product-list {
+        top: 100%;
+        left: 15%;
+        width: 9.25rem;
+    }
+    .fluid-container .container .menu .navbar .menu_item1 a i,
+    .fluid-container .container .menu .navbar .menu_item2 a i {
+        display: flex;
+        align-items: center;
+        /* Canh giữa theo chiều dọc */
+        justify-content: center;
+        /* Canh giữa theo chiều ngang */
+        text-align: center;
+    }
+    #main-menu {
+        display: none;
+    }
+    #res_mobile {
+        display: none;
+    }
+    #foot_mobile {
+        display: none;
+    }
+    .fluid-container .footer .bottom-footer .row .logoto img {
+        width: 7.0625rem;
+        height: 3.5625rem;
+    }
+}
+
+@media (min-width: 1200px) {
+    .fluid-container .container .menu .navbar .hien1 .menu_item1 .product-list {
+        left: -85%;
+        width: 265%;
+    }
+    .fluid-container .container .menu .navbar .hien1 .menu_item2 .product-list {
+        left: 20%;
+        width: 9.25rem;
+    }
+    #main-menu {
+        display: none;
+    }
+    #res_mobile {
+        display: none;
+    }
+    #foot_mobile {
+        display: none;
+    }
+}

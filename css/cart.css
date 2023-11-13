@@ -1,0 +1,99 @@
+.fluid-container .layoutPage-cart {
+    margin: 35px 0 50px 0;
+}
+
+.fluid-container .layoutPage-cart .heading-page .header-page {
+    text-align: center;
+}
+
+.fluid-container .layoutPage-cart .heading-page .header-page h1 {
+    color: #252a2b;
+    font-family: Arsenal;
+    font-size: 30px;
+    font-weight: 700;
+    line-height: 36px;
+    margin: 0px 0px 10px;
+}
+
+.fluid-container .layoutPage-cart .heading-page .header-page .warning {
+    background-color: rgb(149, 155, 156);
+    padding: 15px 0;
+}
+
+.fluid-container .layoutPage-cart .wrapbox-content-cart {
+    margin-top: 35px;
+}
+
+.fluid-container .layoutPage-cart .row .contentCart-detail .cart-empty p {
+    color: #252a2b;
+    font-family: Open Sans;
+    font-size: 25px;
+    line-height: 21px;
+    margin: 30px 0px;
+}
+
+.fluid-container .layoutPage-cart .row .sidebarCart-sticky {
+    border: 1px solid #252a2b;
+}
+
+.fluid-container .layoutPage-cart .row .sidebarCart-sticky .sidebox-order_title h3 {
+    color: #252a2b;
+    font-family: Arsenal;
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 24px;
+    margin: 10px 0px;
+}
+
+.fluid-container .layoutPage-cart .row .sidebarCart-sticky .sidebox-order_title {
+    border-bottom: 1px solid #252a2b;
+    margin-bottom: 15px;
+}
+
+.fluid-container .layoutPage-cart .row .sidebarCart-sticky .sidebox-order_total p {
+    color: #5c5c5c;
+    font-family: Open Sans;
+    font-weight: 600;
+    line-height: 21px;
+}
+
+.fluid-container .layoutPage-cart .row .sidebarCart-sticky .sidebox-order_total .total-price {
+    float: right;
+    color: red;
+    font-size: 24px;
+    font-weight: 700;
+}
+
+.fluid-container .layoutPage-cart .row .sidebarCart-sticky .sidebox-order_total {
+    border-bottom: 1px solid #252a2b;
+    margin-bottom: 15px;
+}
+
+.fluid-container .layoutPage-cart .row .sidebarCart-sticky .sidebox-order_text p {
+    color: #252a2b;
+    font-family: Open Sans;
+    font-size: 14px;
+    line-height: 21px;
+    margin: 0px 0px 10px;
+}
+
+.fluid-container .layoutPage-cart .row .sidebarCart-sticky .sidebox-order_action a.button {
+    border-radius: 4px;
+    color: #ffffff;
+    display: inline-block;
+    font-family: Open Sans;
+    font-size: 15px;
+    letter-spacing: 1px;
+    padding: 12px 20px;
+    text-align: center;
+    width: 100%;
+}
+
+.fluid-container .layoutPage-cart .row .sidebarCart-sticky .sidebox-order_action p.link-continue a {
+    color: #e00707;
+    display: inline;
+    font-family: Open Sans;
+    font-size: 16px;
+    line-height: 50px;
+    text-align: center;
+}

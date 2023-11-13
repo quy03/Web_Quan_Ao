@@ -1,0 +1,222 @@
+/* Đặt kích thước font chữ mặc định cho phần tử gốc */
+
+html {
+    font-size: 16px;
+}
+
+
+/* Thiết lập giá trị mặc định cho tất cả các phần tử */
+
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    font-size: 1rem;
+    /* Sử dụng 1rem cho kích thước mặc định (tương đương 16px) */
+}
+
+
+/* Đặt margin và chiều cao của thẻ HTML và body về 0 */
+
+body {
+    overflow-x: hidden;
+}
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+
+
+/* Giới hạn chiều rộng của body không vượt quá 100% */
+
+body {
+    max-width: 100%;
+}
+
+
+/* Sử dụng kích thước bằng rem cho các phần tử */
+
+img {
+    width: 100%;
+    height: 100%;
+}
+
+
+/* Loại bỏ đường gạch chân từ các liên kết */
+
+.fluid-container a {
+    text-decoration: none;
+}
+
+
+/* Định dạng menu cố định ở top */
+
+#fixed-menu {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    color: #fff;
+    background: #ffffff;
+    z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+}
+
+#fixed-menu.sticky {
+    position: fixed;
+}
+
+
+/* Thiết lập phần sản phẩm */
+
+.row.product {
+    margin-top: 1.875rem;
+}
+
+.row.product .col-12 .row1 .col-4 a img {
+    padding: 0.5rem;
+}
+
+.row.product .col-12 .row.row2 {
+    margin-top: 3.125rem;
+}
+
+.row.product .col-12 .row.row2 .col-sm-6 .row .left-product .product-block .product-detail .pro-price span {
+    color: #b4282b;
+    display: inline;
+    font-size: 0.875rem;
+    font-weight: 700;
+    line-height: 1.3125rem;
+}
+
+.row.product .col-12 .row.row2 .col-sm-6 .row .left-product .product-block .product-detail .pro-name {
+    margin-top: -0.9375rem;
+}
+
+.row.product .col-12 .row.row2 .col-sm-6 .row .left-product .product-block .product-detail .pro-name a {
+    color: #252a2b;
+    font-size: 0.875rem;
+    font-weight: 500;
+}
+
+.row.product .col-12 .row.row2 .col-sm-6 .row .left-product .product-block .product-detail .pro-name .truncate-text {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 100%;
+    display: block;
+}
+
+.row.product .col-12 .row2 .hang_2 {
+    margin-top: 3rem;
+}
+
+
+/* Thiết lập phần xem thêm sản phẩm mới */
+
+.row.product .text-center .doxemthem {
+    font-family: "Arsenal", serif !important;
+    color: #000;
+    font-size: 1rem;
+    font-weight: bold;
+    text-align: center;
+    line-height: 1.6;
+    text-transform: uppercase;
+    border: 0.0625rem solid #000;
+    padding: 0.625rem 1.25rem;
+    transition: all 0.3s ease;
+    display: inline-block;
+    margin-top: 1.25rem;
+    margin-bottom: 1.25rem;
+}
+
+
+/* Thiết lập phần mô tả sản phẩm */
+
+.row.product .row .col-md-6 .motasanphamnho .p1 {
+    margin-bottom: 0.9375rem;
+    /* 15px */
+}
+
+
+/* Thiết lập phần nhóm sản phẩm */
+
+.row.product .container .logo-center {
+    margin-top: 3.75rem;
+    text-align: center;
+}
+
+.row.product .container .logo-center img {
+    max-width: 25rem;
+    text-align: center;
+}
+
+.row.product .container .text-center .text {
+    color: #000;
+    font-size: 1rem;
+    text-align: justify;
+    line-height: 1.6;
+    margin-bottom: 3.125rem;
+    max-width: 57.625rem;
+    font-style: italic;
+    display: inline-block;
+}
+
+.row.product .container .motasanphamnho2 .motasanpham {
+    color: #000;
+    font-size: 1rem;
+    font-weight: bold;
+    text-align: center;
+    line-height: 1.6;
+    text-transform: uppercase;
+    display: block;
+    margin-top: 0.625rem;
+    margin-bottom: 0.625rem;
+}
+
+
+/* Thiết lập phần hệ thống cửa hàng */
+
+.hethongcuahang {
+    margin-top: 6.25rem;
+    text-align: center;
+    padding: 3.75rem 0;
+    background-color: #820012;
+}
+
+.hethongcuahang .motahethong .text {
+    margin-top: 3.125rem;
+}
+
+.hethongcuahang h3,
+.text-center a,
+.doanvan {
+    color: #fff;
+}
+
+.hethongcuahang .doanvan {
+    font-size: 1rem;
+    text-align: justify;
+    line-height: 1.6;
+    max-width: 28.75rem;
+    display: inline-block;
+}
+
+.hethongcuahang .cuahanglink {
+    color: #fff;
+    font-size: 1rem;
+    font-weight: bold;
+    text-align: center;
+    line-height: 1.6;
+    border-style: solid;
+    border-color: #fff;
+    border-width: 0.1875rem;
+    border-radius: 0;
+    padding: 0.3125rem 1.25rem;
+    display: inline-block;
+    margin-top: 1.25rem;
+}

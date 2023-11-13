@@ -1,0 +1,585 @@
+html {
+    font-size: 16px;
+}
+
+
+/* Thiết lập giá trị mặc định cho tất cả các phần tử */
+
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    font-size: 1rem;
+}
+
+
+/* Đặt margin và chiều cao của thẻ HTML và body về 0 */
+
+body {
+    overflow-x: hidden;
+}
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+
+
+/* Giới hạn chiều rộng của body không vượt quá 100% */
+
+body {
+    max-width: 100%;
+}
+
+
+/* Sử dụng kích thước bằng rem cho các phần tử */
+
+img {
+    width: 100%;
+    height: 100%;
+}
+
+
+/* Loại bỏ đường gạch chân từ các liên kết */
+
+.fluid-container a {
+    text-decoration: none;
+}
+
+#fixed-menu {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    color: #fff;
+    background: #ffffff;
+    z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+}
+
+#fixed-menu.sticky {
+    position: fixed;
+}
+
+
+/* header-menu */
+
+.fluid-container .header {
+    height: 2.938rem;
+    background-color: #820012;
+    text-align: center;
+    align-items: center;
+}
+
+.fluid-container .header .center img {
+    width: 2.188rem;
+    height: 2.188rem;
+}
+
+.fluid-container .header .center a {
+    font-weight: 700;
+    font-size: 0.875rem;
+    color: #ffffff;
+}
+
+
+/* navbar mobile*/
+
+#toggle {
+    display: none;
+    color: #000;
+    padding: 10px;
+    cursor: pointer;
+}
+
+#toggle i {
+    font-size: 30px;
+}
+
+#res_mobile .menu {
+    background-color: #ffffff;
+}
+
+#res_mobile .menu .logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#res_mobile .menu .logo img {
+    height: 2.25rem;
+    width: 13.0625rem;
+}
+
+#res_mobile .menu .col-3 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#res_mobile .menu .col-3 .icon i {
+    font-size: 20px;
+    font-weight: 800;
+    color: #000;
+}
+
+#main-menu {
+    position: fixed;
+    top: 112px;
+    left: 0;
+    width: 110%;
+    height: 100%;
+    background-color: #f5f5f5;
+    z-index: 999;
+}
+
+#main-menu .col-12 span {
+    color: #000;
+    font-family: Open Sans;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 39.6px;
+    margin-left: 20px;
+}
+
+#main-menu .col-12 a:hover {
+    color: #65d1e6;
+}
+
+#main-menu .support {
+    margin-left: 20px;
+}
+
+#main-menu .support .sup_header {
+    color: #252a2b;
+    font-family: Open Sans;
+    font-size: 15px;
+    font-weight: 500;
+    line-height: 27.75px;
+    margin: 0px 0px 10px;
+}
+
+#main-menu .support .phoneNumber,
+.email {
+    display: flex;
+}
+
+#main-menu .support .phoneNumber .bi,
+#main-menu .support .email .bi {
+    margin-right: 16px;
+}
+
+#main-menu .support .phoneNumber,
+#main-menu .support .email {
+    color: #252a2b;
+}
+
+
+/* john henry */
+
+#johnHenry {
+    cursor: pointer;
+}
+
+#jh {
+    /* display: none; */
+    position: fixed;
+    top: 112px;
+    left: 0;
+    width: 110%;
+    height: 100%;
+    background-color: #f5f5f5;
+    z-index: 999;
+}
+
+
+/* search */
+
+#search {
+    cursor: pointer;
+}
+
+#sea {
+    position: fixed;
+    top: 112px;
+    left: 0;
+    width: 110%;
+    height: 100%;
+    background-color: #f5f5f5;
+    z-index: 999;
+}
+
+#sea p {
+    color: #252a2b;
+    font-family: Open Sans;
+    font-size: 20px;
+    font-weight: 500;
+    padding: 6px 10px;
+    text-align: center;
+    text-transform: uppercase;
+    border-bottom: 1px solid #ccc;
+    margin-top: 30px;
+}
+
+#sea .search-box {
+    display: flex;
+    align-items: center;
+    border: 1px solid #ccc;
+    background: #edecec;
+}
+
+#sea .search-box input {
+    width: 80%;
+    padding: 10px;
+    border: none;
+    background: #edecec;
+    margin-right: 5px;
+}
+
+#sea .search-box button {
+    padding: 5px 10px;
+    border: none;
+    background: none;
+}
+
+#sea .search-box button i {
+    align-items: flex-start;
+    padding: 5px 5px;
+    border: none;
+    background: none;
+    margin-left: 5px;
+}
+
+
+/* navbar web*/
+
+.fluid-container .container .menu {
+    height: 4.5rem;
+    background-color: #ffffff;
+    justify-content: center;
+    align-items: center;
+}
+
+.fluid-container .container .menu .logo img {
+    height: 3.25rem;
+    width: 17.0625rem;
+    justify-content: center;
+    align-items: center;
+}
+
+.fluid-container .container .menu .navbar span {
+    font-size: 0.99rem;
+}
+
+.fluid-container .container .menu .navbar .col-4 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.fluid-container .container .menu .navbar a {
+    color: #252a2b;
+    font-weight: 700;
+    font-size: 0.875rem;
+}
+
+.fluid-container .container .menu .navbar a:hover {
+    color: #820012;
+}
+
+.fluid-container .container .menu .navbar .hien1 {
+    position: relative;
+}
+
+.fluid-container .container .menu .navbar .hien1 .menu_item1:hover .product-list {
+    display: block;
+}
+
+.fluid-container .container .menu .navbar .hien1 .menu_item2:hover .product-list {
+    display: block;
+}
+
+.fluid-container .container .menu .navbar .hien1 .menu_item1 .product-list {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: -80%;
+    background-color: #fff;
+    width: 260%;
+    z-index: 1;
+    box-shadow: 0 0.125rem 0.3125rem rgba(0, 0, 0, 0.2);
+    border-top: 1.25rem;
+}
+
+.fluid-container .container .menu .navbar .hien1 .menu_item1 .product-list .column {
+    width: 33%;
+    float: left;
+}
+
+.fluid-container .container .menu .navbar .hien1 .menu_item1 .product-list .column .product .title a {
+    color: #252a2b;
+    font-size: 0.875rem;
+    line-height: 1.225rem;
+    align-items: center;
+    padding: 0.5625rem 1.125rem 0.5625rem 0;
+    font-weight: 400;
+    display: flex;
+}
+
+.fluid-container .container .menu .navbar .hien1 .menu_item1 .product-list .column .product a {
+    margin-left: 10px;
+}
+
+.fluid-container .container .menu .navbar .hien1 .menu_item1 .product-list .column .product .title a:hover {
+    color: #820012;
+}
+
+.fluid-container .container .menu .navbar .hien1 .menu_item2 .product-list {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 25%;
+    background-color: #fff;
+    width: 9.25rem;
+    z-index: 1;
+    box-shadow: 0 0.125rem 0.3125rem rgba(0, 0, 0, 0.2);
+    border-top: 1.25rem;
+}
+
+.fluid-container .container .menu .navbar .hien1 .menu_item2 .column .product .title div {
+    display: flex;
+    align-items: center;
+}
+
+.fluid-container .container .menu .navbar .hien1 .menu_item2 .column .product .title a {
+    color: #252a2b;
+    font-size: 0.875rem;
+    line-height: 1.225rem;
+    align-items: center;
+    padding: 0.5625rem 0.3125rem 0.5625rem 0.625rem;
+    font-weight: 600;
+    display: inline-flex;
+    width: 6.5625rem;
+}
+
+.fluid-container .container .menu .navbar .hien1 .menu_item2 .column .product .title a:hover {
+    color: #820012;
+}
+
+.fluid-container .container .menu .navbar .hien1 .menu_item2 .column .product .title i {
+    color: #252a2b;
+    font-size: 0.875rem;
+    margin-left: 1.25rem;
+}
+
+.fluid-container .container .menu .navbar .hien1 .menu-item .hien2 {
+    visibility: hidden;
+    transition: visibility 0s, opacity 0.1s;
+    flex-direction: column;
+    position: absolute;
+    background-color: #fff;
+    border: 0.0625rem solid #ccc;
+    padding: 0.3125rem;
+    z-index: 1;
+    left: 6.25rem;
+    top: 0;
+    margin-left: 3rem;
+}
+
+.fluid-container .container .menu .navbar .hien1 .menu-item:hover .hien2 {
+    visibility: visible;
+    display: flex;
+}
+
+.fluid-container .container .menu .navbar .hien1 .menu-item .hien2.col1 {
+    margin-top: 0.25rem;
+}
+
+.fluid-container .container .menu .navbar .hien1 .menu-item .hien2.col2 {
+    margin-top: 2.75rem;
+}
+
+
+/* biểu tưởng icon */
+
+.fluid-container .container .menu .icon i {
+    color: #252a2b;
+    font-size: 1.25rem;
+    padding-left: 0.625rem;
+}
+
+
+/* search */
+
+.fluid-container .container .menu .col-2 .icon .search-icon {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.fluid-container .container .menu .col-2 .icon .search-icon .search-box {
+    display: none;
+    position: absolute;
+    top: 120%;
+    left: -170px;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.fluid-container .container .menu .col-2 .icon .search-icon .search-box h6 {
+    color: #000;
+    text-align: center;
+}
+
+.fluid-container .container .menu .col-2 .icon .search-icon .search-box .search-input {
+    display: flex;
+    border: 1px solid #ccc;
+    margin-top: 10px;
+}
+
+.fluid-container .container .menu .col-2 .icon .search-icon .search-box input {
+    width: 273px;
+    padding: 5px;
+    border: none;
+}
+
+.fluid-container .container .menu .col-2 .icon .search-icon .search-box button {
+    padding: 5px 10px;
+    border: none;
+    background: none;
+}
+
+
+/* login */
+
+.fluid-container .container .menu .col-2 .icon .login {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.fluid-container .container .menu .col-2 .icon .login .card {
+    display: none;
+    position: absolute;
+    top: 120%;
+    left: -200px;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin-right: -60px;
+}
+
+.fluid-container .container .menu .col-2 .icon .login .card .event {
+    margin-top: 10px;
+    text-align: center;
+}
+
+.fluid-container .container .menu .col-2 .icon .login .card p {
+    font-size: 14px;
+    margin-bottom: -16px;
+}
+
+
+/* cart */
+
+.fluid-container .container .menu .col-2 .icon .cart {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.fluid-container .container .menu .col-2 .icon .cart .cart-box {
+    display: none;
+    position: absolute;
+    top: 120%;
+    left: -285px;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin-right: 20px;
+}
+
+.fluid-container .container .menu .col-2 .icon .cart .cart-box .card-header {
+    text-align: center;
+    font-size: 20px;
+}
+
+.fluid-container .container .menu .col-2 .icon .cart .cart-box .card-body .bi-cart2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 50px;
+}
+
+.fluid-container .container .menu .col-2 .icon .cart .card .card-body p {
+    text-align: center;
+}
+
+.fluid-container .container .menu .col-2 .icon .cart .card .card-body .card-view {
+    background-color: #f5f5f5;
+    padding: 20px;
+    border: 1px solid #ccc;
+}
+
+.cart-view table {
+    width: 100%;
+}
+
+.total-row {
+    font-weight: bold;
+}
+
+.text-left {
+    text-align: left;
+}
+
+.text-right {
+    color: #b4282b;
+    text-align: right;
+}
+
+.action-row td {
+    text-align: center;
+    padding: 10px;
+}
+
+.linktocart {
+    text-decoration: none;
+}
+
+.button {
+    display: inline-block;
+    padding: 10px 20px;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.button.dark {
+    background-color: #b4282b;
+}
+
+.button.dark span {
+    font-size: 12px;
+}
+
+.button:hover {
+    background-color: #820012;
+}
+
+.row.menu .col-2 .row.icon .cart .card .card-body .cart-policy .head {
+    color: #b4282b;
+    font-size: 1rem;
+}
+
+.row.menu .col-2 .row.icon .cart .card .card-body .cart-policy .body li {
+    color: #820012;
+    font-size: o.875rem;
+}

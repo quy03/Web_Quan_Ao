@@ -1,0 +1,202 @@
+/* Đặt kích thước font chữ mặc định cho phần tử gốc */
+
+html {
+    font-size: 16px;
+}
+
+
+/* Thiết lập giá trị mặc định cho tất cả các phần tử */
+
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    font-size: 1rem;
+    /* Sử dụng 1rem cho kích thước mặc định (tương đương 16px) */
+}
+
+
+/* Đặt margin và chiều cao của thẻ HTML và body về 0 */
+
+body {
+    overflow-x: hidden;
+}
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+
+
+/* Giới hạn chiều rộng của body không vượt quá 100% */
+
+body {
+    max-width: 100%;
+}
+
+
+/* Sử dụng kích thước bằng rem cho các phần tử */
+
+img {
+    width: 100%;
+    height: 100%;
+}
+
+
+/* web */
+
+.fluid-container a {
+    text-decoration: none;
+}
+
+.fluid-container .footer .row {
+    margin-left: 40px;
+}
+
+.fluid-container .footer {
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    pointer-events: none;
+    background-color: rgba(80, 6, 5, 0.9);
+}
+
+.fluid-container .footer h4 {
+    letter-spacing: 0.02em;
+    color: #fff;
+    font-size: 1.125rem;
+    font-weight: bold;
+    text-align: left;
+    line-height: 1.4;
+    text-transform: uppercase;
+    margin-top: 40px;
+}
+
+.fluid-container .footer .row .logo {
+    display: flex;
+    justify-content: flex-start;
+}
+
+.fluid-container .footer .row .logo img {
+    max-width: 90px;
+    height: 90px;
+}
+
+.fluid-container .footer ul li,
+.fluid-container .footer ul li a {
+    color: #fff;
+}
+
+.fluid-container .footer .bottom-footer {
+    text-align: center;
+    padding: 20px;
+}
+
+.fluid-container .footer .bottom-footer .logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.fluid-container .footer .bottom-footer .logo_nho img {
+    height: 35px;
+    width: 35px;
+    margin-right: 16px;
+}
+
+.fluid-container .footer .bottom-footer .logo_lon img {
+    height: 57px;
+    width: 150px;
+    margin-right: 16px;
+}
+
+.fluid-container .footer .text-center {
+    color: #fff;
+}
+
+.fluid-container .footer .text-center p {
+    padding: 0.625rem 0;
+}
+
+
+/* mobile */
+
+.fluid-container .footer_mobile {
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    pointer-events: none;
+    background-color: rgba(80, 6, 5, 0.9);
+}
+
+.fluid-container .footer_mobile .footer-content1 .footer-title {
+    color: #ffffff;
+    font-family: Arsenal;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 20px;
+    padding: 10px 0px;
+    text-align: center;
+    text-transform: uppercase;
+    padding-top: 40px;
+}
+
+.fluid-container .footer_mobile .footer-content1 .footer-content .footer-logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.fluid-container .footer_mobile .footer-content1 .footer-content .footer-logo img {
+    width: 121px;
+    height: auto;
+}
+
+.fluid-container .footer_mobile .footer-content1 .footer-content .footer-list li,
+.fluid-container .footer_mobile .footer-content2 .footer-list li {
+    color: #ffffff;
+    font-size: 14px;
+    line-height: 28px;
+}
+
+.fluid-container .footer_mobile .footer-content2 .footer-title {
+    color: #ffffff;
+    font-family: Arsenal;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 20px;
+    padding: 10px 0px;
+    text-transform: uppercase;
+}
+
+.fluid-container .footer_mobile .bottom-footer {
+    padding: 20px;
+}
+
+.fluid-container .footer_mobile .bottom-footer .logo {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.fluid-container .footer_mobile .bottom-footer .logo_nho img {
+    height: 35px;
+    width: 35px;
+    margin-right: 16px;
+}
+
+.fluid-container .footer_mobile .bottom-footer .logo_lon img {
+    height: 57px;
+    width: 150px;
+}
+
+.fluid-container .footer_mobile p {
+    color: #ffffff;
+    font-size: 14px;
+    line-height: 21px;
+    padding: 0 0 20px 0;
+}
