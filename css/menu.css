@@ -136,6 +136,11 @@ img {
     z-index: 999;
 }
 
+#main-menu .col-12 {
+    border-bottom: 1px solid #aeaeae;
+    margin: 15px 0px;
+}
+
 #main-menu .col-12 span {
     color: #000;
     font-family: Open Sans;
@@ -145,7 +150,7 @@ img {
     margin-left: 20px;
 }
 
-#main-menu .col-12 a:hover {
+#main-menu .col-12 span:hover {
     color: #65d1e6;
 }
 
@@ -206,7 +211,7 @@ img {
     position: fixed;
     top: 112px;
     left: 0;
-    width: 110%;
+    width: 100%;
     height: 100%;
     background-color: #f5f5f5;
     z-index: 999;
@@ -227,12 +232,15 @@ img {
 #sea .search-box {
     display: flex;
     align-items: center;
+    text-align: center;
     border: 1px solid #ccc;
     background: #edecec;
+    width: 90%;
+    margin: 25px;
 }
 
 #sea .search-box input {
-    width: 80%;
+    width: 90%;
     padding: 10px;
     border: none;
     background: #edecec;
@@ -240,17 +248,163 @@ img {
 }
 
 #sea .search-box button {
-    padding: 5px 10px;
+    width: 10%;
+    padding: 10px;
     border: none;
     background: none;
 }
 
+#sea .search-box button:hover {
+    background: #b4282b;
+}
+
 #sea .search-box button i {
-    align-items: flex-start;
-    padding: 5px 5px;
     border: none;
     background: none;
-    margin-left: 5px;
+}
+
+
+/* login */
+
+#login {
+    cursor: pointer;
+}
+
+#log {
+    position: fixed;
+    top: 112px;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #f5f5f5;
+    z-index: 999;
+}
+
+#log .card {
+    border-radius: none;
+    background: none;
+    border: none;
+}
+
+#log .card input {
+    background: none;
+}
+
+#log .card .event {
+    margin: 10px 0;
+    text-align: center;
+}
+
+#log .card p {
+    font-size: 14px;
+    text-align: center;
+}
+
+
+/* cart */
+
+#cart {
+    cursor: pointer;
+}
+
+#car {
+    position: fixed;
+    top: 112px;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #f5f5f5;
+    z-index: 999;
+}
+
+#car .card .card-header {
+    text-align: center;
+    font-size: 20px;
+    border: none;
+    background: #f3f5f6;
+    border-radius: 10px;
+    border-radius: 4px;
+    font-family: Open Sans;
+    font-weight: 500;
+    line-height: 21px;
+}
+
+#car .card .card-body {
+    background-color: #f5f5f5;
+}
+
+#car .card .card-body .bi-cart2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 50px;
+}
+
+#car .card .card-body p {
+    text-align: center;
+}
+
+#car .card .card-body .card-view {
+    padding: 20px;
+    border: 1px solid #ccc;
+}
+
+.cart-view table {
+    width: 100%;
+}
+
+.total-row {
+    font-weight: bold;
+}
+
+.text-left {
+    text-align: left;
+}
+
+.text-right {
+    color: #b4282b;
+    text-align: right;
+}
+
+.action-row td {
+    text-align: center;
+    padding: 10px;
+}
+
+.linktocart {
+    text-decoration: none;
+}
+
+.button {
+    display: inline-block;
+    padding: 10px 20px;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.button.dark {
+    background-color: #b4282b;
+}
+
+.button.dark span {
+    font-size: 12px;
+}
+
+.button:hover {
+    background-color: #820012;
+}
+
+.row.menu .col-2 .row.icon .cart .card .card-body .cart-policy .head {
+    color: #b4282b;
+    font-size: 1rem;
+}
+
+.row.menu .col-2 .row.icon .cart .card .card-body .cart-policy .body li {
+    color: #820012;
+    font-size: o.875rem;
 }
 
 
@@ -415,71 +569,77 @@ img {
 /* search */
 
 .fluid-container .container .menu .col-2 .icon .search-icon {
-    position: relative;
-    display: inline-block;
     cursor: pointer;
 }
 
-.fluid-container .container .menu .col-2 .icon .search-icon .search-box {
+.fluid-container .container .menu .col-2 .icon .search-box {
     display: none;
-    position: absolute;
-    top: 120%;
-    left: -170px;
+    position: fixed;
     background-color: #fff;
     border: 1px solid #ccc;
-    padding: 10px;
     border-radius: 5px;
+    width: 28%;
+    top: 119px;
+    right: 9%;
+    z-index: 1000;
+    padding: 20px;
 }
 
-.fluid-container .container .menu .col-2 .icon .search-icon .search-box h6 {
+.fluid-container .container .menu .col-2 .icon .search-box h6 {
     color: #000;
     text-align: center;
 }
 
-.fluid-container .container .menu .col-2 .icon .search-icon .search-box .search-input {
+.fluid-container .container .menu .col-2 .icon .search-box .search-input {
     display: flex;
     border: 1px solid #ccc;
     margin-top: 10px;
 }
 
-.fluid-container .container .menu .col-2 .icon .search-icon .search-box input {
+.fluid-container .container .menu .col-2 .icon .search-box input {
     width: 273px;
-    padding: 5px;
     border: none;
+    width: 90%;
 }
 
-.fluid-container .container .menu .col-2 .icon .search-icon .search-box button {
-    padding: 5px 10px;
+.fluid-container .container .menu .col-2 .icon .search-box button {
+    padding: 10px 20px 10px 10px;
+    margin-left: 10px;
     border: none;
     background: none;
+}
+
+.fluid-container .container .menu .col-2 .icon .search-box button:hover {
+    background: #b4282b;
+    border-radius: 10%;
 }
 
 
 /* login */
 
 .fluid-container .container .menu .col-2 .icon .login {
-    position: relative;
-    display: inline-block;
     cursor: pointer;
 }
 
-.fluid-container .container .menu .col-2 .icon .login .card {
+.fluid-container .container .menu .col-2 .icon .login-box {
     display: none;
-    position: absolute;
-    top: 120%;
-    left: -200px;
+    position: fixed;
     background-color: #fff;
     border: 1px solid #ccc;
-    padding: 10px;
-    margin-right: -60px;
+    border-radius: 5px;
+    width: 28%;
+    top: 119px;
+    right: 9%;
+    z-index: 999;
+    padding: 20px;
 }
 
-.fluid-container .container .menu .col-2 .icon .login .card .event {
+.fluid-container .container .menu .col-2 .icon .card .event {
     margin-top: 10px;
     text-align: center;
 }
 
-.fluid-container .container .menu .col-2 .icon .login .card p {
+.fluid-container .container .menu .col-2 .icon .card p {
     font-size: 14px;
     margin-bottom: -16px;
 }
@@ -487,40 +647,40 @@ img {
 
 /* cart */
 
-.fluid-container .container .menu .col-2 .icon .cart {
-    position: relative;
-    display: inline-block;
+.fluid-container .container .menu .col-2 .icon .cart-box {
     cursor: pointer;
 }
 
-.fluid-container .container .menu .col-2 .icon .cart .cart-box {
+.fluid-container .container .menu .col-2 .icon .cart-box {
     display: none;
-    position: absolute;
-    top: 120%;
-    left: -285px;
+    position: fixed;
     background-color: #fff;
     border: 1px solid #ccc;
-    padding: 10px;
-    margin-right: 20px;
+    border-radius: 5px;
+    width: 28%;
+    top: 119px;
+    right: 9%;
+    z-index: 999;
+    padding: 20px;
 }
 
-.fluid-container .container .menu .col-2 .icon .cart .cart-box .card-header {
+.fluid-container .container .menu .col-2 .icon .cart-box .card-header {
     text-align: center;
     font-size: 20px;
 }
 
-.fluid-container .container .menu .col-2 .icon .cart .cart-box .card-body .bi-cart2 {
+.fluid-container .container .menu .col-2 .icon .cart-box .card-body .bi-cart2 {
     display: flex;
     justify-content: center;
     align-items: center;
     font-size: 50px;
 }
 
-.fluid-container .container .menu .col-2 .icon .cart .card .card-body p {
+.fluid-container .container .menu .col-2 .icon .cart-box .card-body p {
     text-align: center;
 }
 
-.fluid-container .container .menu .col-2 .icon .cart .card .card-body .card-view {
+.fluid-container .container .menu .col-2 .icon .cart-box .card-body .card-view {
     background-color: #f5f5f5;
     padding: 20px;
     border: 1px solid #ccc;

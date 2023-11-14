@@ -33,17 +33,16 @@
                         <a href="../index.html">
                             <img src="../image/Logo/logo.webp" alt="logo">
                         </a>
-
                     </div>
                     <div class="col-3 col-md-3 col-sm-3 col-xl-3">
                         <div class="icon row">
                             <div class="search-icon col-4 col-md-4 col-sm-4 col-xl-4" id="search">
                                 <i class="bi bi-search"></i>
                             </div>
-                            <div class="login col-4 col-md-4 col-sm-4 col-xl-4">
+                            <div class="login col-4 col-md-4 col-sm-4 col-xl-4" id="login">
                                 <i class="bi bi-person-circle "></i>
                             </div>
-                            <div class="cart col-4 col-md-4 col-sm-4 col-xl-4">
+                            <div class="cart col-4 col-md-4 col-sm-4 col-xl-4" id="cart">
                                 <i class="bi bi-bag "></i>
                             </div>
                         </div>
@@ -56,15 +55,12 @@
                             <span>NEW COLLECTION</span>
                         </a>
                     </div>
-                    <hr>
                     <div class="col-12 col-md-12 col-sm-12 col-xl-12">
                         <span id="johnHenry">JOHN HENRY</span>
                     </div>
-                    <hr>
                     <div class="col-12 col-md-12 col-sm-12 col-xl-12">
                         <span>FREELANCER</span>
                     </div>
-                    <hr>
                     <div class="support">
                         <p class="sup_header">BẠN CẦN HỖ TRỢ?</p>
                         <div class="phoneNumber">
@@ -106,11 +102,77 @@
                         <button>
                             <i class="bi bi-search "></i>
                         </button>
-
                     </div>
                 </div>
                 <!-- login -->
+                <div class="login" id="log">
+                    <div class="card">
+                        <div class="card-header">Đăng nhập tài khoản</div>
+                        <div class="card-body">
+                            <div class="form-group">
+                                <label for="username">Tên đăng nhập:</label>
+                                <input type="text" class="form-control" id="username" name="username" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="password">Mật khẩu:</label>
+                                <input type="password" class="form-control" id="password" name="password" required>
+                            </div>
+                            <div class="event">
+                                <button type="submt" class="btn btn-danger">Đăng nhập</button>
+                            </div>
+                            <p>
+                                Nếu chưa có tài khoản bấm <a href="./pages/register.html">tại đây</a> để đăng ký!
+                            </p>
+                        </div>
+                    </div>
+                </div>
                 <!-- cart -->
+                <div class="cart" id="car">
+                    <div class="card">
+                        <div class="card-header">Giỏ hàng</div>
+                        <div class="card-body">
+                            <i class="bi bi-cart2"></i>
+                            <p>Hiện chưa có sản phẩm</p>
+                            <hr>
+                            <div class="cart-view">
+                                <table>
+                                    <tbody>
+                                        <tr class="total-row">
+                                            <td class="text-left">TỔNG TIỀN:</td>
+                                            <td class="text-right">0đ</td>
+                                        </tr>
+                                        <tr class="action-row">
+                                            <td>
+                                                <a href="./pages/cart.html" class="linktocart button dark">
+                                                    <span>XEM GIỎ HÀNG</span>
+                                                </a>
+                                            </td>
+                                            <td>
+                                                <a href="./pages/cart.html" class="linktocart button dark">
+                                                    <span>THANH TOÁN</span>
+                                                </a>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+
+                            </div>
+                            <div class="cart-policy">
+                                <h4 class="head">Thân Gửi Qúy Khách Hàng:</h4>
+                                <div class="body">
+                                    <ul>
+                                        <li>
+                                            Sản phẩm mua được phép đổi trong vòng 7 ngày (tính từ ngày quý khách nhận được hàng). Chúng tôi không chấp nhận hủy đơn hàng.
+                                        </li>
+                                        <li>
+                                            Chính sách đổi trả này chỉ áp dụng đối với SẢN PHẨM NGUYÊN GIÁ, không áp dụng đối với các sản phẩm ƯU ĐÃI.
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
             <!-- responsive web -->
             <div class="container" id="res_web">
@@ -265,83 +327,83 @@
                             <!-- tìm kiếm -->
                             <div class="search-icon col-4 col-md-4 col-sm-4 col-xl-4" id="searchIcon" onclick="showSearchBox()">
                                 <i class="bi bi-search"></i>
-                                <div class="search-box card" id="searchBox">
-                                    <h6 class="card-heart">TÌM KIẾM</h6>
-                                    <div class="form-control search-input">
-                                        <input type="text " class="form-control" placeholder="Tìm kiếm ">
-                                        <button onclick="performSearch() ">
-                                            <i class="bi bi-search "></i>
-                                        </button>
-                                    </div>
+                            </div>
+                            <div class="search-box card" id="searchBox">
+                                <h6 class="card-heart">TÌM KIẾM</h6>
+                                <div class="form-control search-input">
+                                    <input type="text " class="form-control" placeholder="Tìm kiếm ">
+                                    <button onclick="performSearch() ">
+                                        <i class="bi bi-search "></i>
+                                    </button>
                                 </div>
                             </div>
                             <!-- tài khoản -->
                             <div class="login col-4 col-md-4 col-sm-4 col-xl-4" id="loginIcon" onclick="showLoginBox()">
                                 <i class="bi bi-person-circle "></i>
-                                <div class="card" id="loginBox">
-                                    <div class="card-header">Đăng nhập</div>
-                                    <div class="card-body">
-                                        <div class="form-group">
-                                            <label for="username">Tên đăng nhập:</label>
-                                            <input type="text" class="form-control" id="username" name="username" required>
-                                        </div>
-                                        <div class="form-group">
-                                            <label for="password">Mật khẩu:</label>
-                                            <input type="password" class="form-control" id="password" name="password" required>
-                                        </div>
-                                        <div class="event">
-                                            <button type="submt" class="btn btn-danger">Đăng nhập</button>
-                                        </div>
-                                        <p>
-                                            Nếu chưa có tài khoản bấm <a href="./pages/register.html">tại đây</a> để đăng ký!
-                                        </p>
+                            </div>
+                            <div class="login-box card" id="loginBox">
+                                <div class="card-header">Đăng nhập</div>
+                                <div class="card-body">
+                                    <div class="form-group">
+                                        <label for="username">Tên đăng nhập:</label>
+                                        <input type="text" class="form-control" id="username" name="username" required>
                                     </div>
+                                    <div class="form-group">
+                                        <label for="password">Mật khẩu:</label>
+                                        <input type="password" class="form-control" id="password" name="password" required>
+                                    </div>
+                                    <div class="event">
+                                        <button type="submt" class="btn btn-danger">Đăng nhập</button>
+                                    </div>
+                                    <p>
+                                        Nếu chưa có tài khoản bấm <a href="./pages/register.html">tại đây</a> để đăng ký!
+                                    </p>
                                 </div>
                             </div>
                             <!-- giỏ hàng -->
                             <div class="cart col-4 col-md-4 col-sm-4 col-xl-4" id="cartIcon" onclick="showCartBox()">
                                 <i class="bi bi-bag "></i>
-                                <div class="cart-box card" id="cartBox">
-                                    <div class="card-header">Giỏ hàng</div>
-                                    <div class="card-body">
-                                        <i class="bi bi-cart2"></i>
-                                        <p>Hiện chưa có sản phẩm</p>
-                                        <hr>
-                                        <div class="cart-view">
-                                            <table>
-                                                <tbody>
-                                                    <tr class="total-row">
-                                                        <td class="text-left">TỔNG TIỀN:</td>
-                                                        <td class="text-right">0đ</td>
-                                                    </tr>
-                                                    <tr class="action-row">
-                                                        <td>
-                                                            <a href="./pages/cart.html" class="linktocart button dark">
-                                                                <span>XEM GIỎ HÀNG</span>
-                                                            </a>
-                                                        </td>
-                                                        <td>
-                                                            <a href="./pages/cart.html" class="linktocart button dark">
-                                                                <span>THANH TOÁN</span>
-                                                            </a>
-                                                        </td>
-                                                    </tr>
-                                                </tbody>
-                                            </table>
+                            </div>
+                            <div class="cart-box card" id="cartBox">
+                                <div class="card-header">Giỏ hàng</div>
+                                <div class="card-body">
+                                    <i class="bi bi-cart2"></i>
+                                    <p>Hiện chưa có sản phẩm</p>
+                                    <hr>
+                                    <div class="cart-view">
+                                        <table>
+                                            <tbody>
+                                                <tr class="total-row">
+                                                    <td class="text-left">TỔNG TIỀN:</td>
+                                                    <td class="text-right">0đ</td>
+                                                </tr>
+                                                <tr class="action-row">
+                                                    <td>
+                                                        <a href="./pages/cart.html" class="linktocart button dark">
+                                                            <span>XEM GIỎ HÀNG</span>
+                                                        </a>
+                                                    </td>
+                                                    <td>
+                                                        <a href="./pages/cart.html" class="linktocart button dark">
+                                                            <span>THANH TOÁN</span>
+                                                        </a>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
 
-                                        </div>
-                                        <div class="cart-policy">
-                                            <h4 class="head">Thân Gửi Qúy Khách Hàng:</h4>
-                                            <div class="body">
-                                                <ul>
-                                                    <li>
-                                                        Sản phẩm mua được phép đổi trong vòng 7 ngày (tính từ ngày quý khách nhận được hàng). Chúng tôi không chấp nhận hủy đơn hàng.
-                                                    </li>
-                                                    <li>
-                                                        Chính sách đổi trả này chỉ áp dụng đối với SẢN PHẨM NGUYÊN GIÁ, không áp dụng đối với các sản phẩm ƯU ĐÃI.
-                                                    </li>
-                                                </ul>
-                                            </div>
+                                    </div>
+                                    <div class="cart-policy">
+                                        <h4 class="head">Thân Gửi Qúy Khách Hàng:</h4>
+                                        <div class="body">
+                                            <ul>
+                                                <li>
+                                                    Sản phẩm mua được phép đổi trong vòng 7 ngày (tính từ ngày quý khách nhận được hàng). Chúng tôi không chấp nhận hủy đơn hàng.
+                                                </li>
+                                                <li>
+                                                    Chính sách đổi trả này chỉ áp dụng đối với SẢN PHẨM NGUYÊN GIÁ, không áp dụng đối với các sản phẩm ƯU ĐÃI.
+                                                </li>
+                                            </ul>
                                         </div>
                                     </div>
                                 </div>
@@ -354,16 +416,39 @@
     </div>
     <script>
         $(document).ready(function() {
+            $('#searchIcon').click(function() {
+                $('#loginBox, #cartBox').hide();
+                $('#searchBox').slideToggle();
+            });
+            $('#loginIcon').click(function() {
+                $('#searchBox, #cartBox').hide();
+                $('#loginBox').slideToggle();
+            });
+            $('#cartIcon').click(function() {
+                $('#loginBox, #searchBox').hide();
+                $('#cartBox').slideToggle();
+            });
+            <!--  -->
             $('#toggle').click(function() {
+                $('#sea, #log, #car').hide();
                 $('#main-menu').slideToggle();
             });
-            $('#johnHenry').click(function() {
-                $('#jh').slideToggle();
-            });
+
             $('#search').click(function() {
                 $('#sea').slideToggle();
+                $('#log, #car,#main-menu').hide();
             });
-        })
+
+            $('#login').click(function() {
+                $('#log').slideToggle();
+                $('#sea, #car,#main-menu').hide();
+            });
+
+            $('#cart').click(function() {
+                $('#car').slideToggle();
+                $('#sea, #log,#main-menu').hide();
+            });
+        });
     </script>
 </body>
 
