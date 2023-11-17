@@ -86,13 +86,13 @@ img {
 }
 
 
-/* navbar mobile*/
+/* menu*/
 
 #toggle {
     display: none;
     color: #000;
-    padding: 10px;
     cursor: pointer;
+    padding: 5px 0 5px 10px;
 }
 
 #toggle i {
@@ -126,6 +126,9 @@ img {
     color: #000;
 }
 
+
+/* navbar mobile */
+
 #main-menu {
     position: fixed;
     top: 112px;
@@ -148,6 +151,7 @@ img {
     font-weight: 700;
     line-height: 39.6px;
     margin-left: 20px;
+    cursor: pointer;
 }
 
 #main-menu .col-12 span:hover {
@@ -185,12 +189,7 @@ img {
 
 /* john henry */
 
-#johnHenry {
-    cursor: pointer;
-}
-
 #jh {
-    /* display: none; */
     position: fixed;
     top: 112px;
     left: 0;
@@ -198,6 +197,198 @@ img {
     height: 100%;
     background-color: #f5f5f5;
     z-index: 999;
+}
+
+#jh .col-12 {
+    border-bottom: 1px solid #aeaeae;
+    margin: 15px 0px;
+}
+
+#jh .col-12 span {
+    cursor: pointer;
+}
+
+#jh .col-12 .comeBack {
+    cursor: pointer;
+    color: #000;
+    font-family: Open Sans;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 39.6px;
+}
+
+#jh .col-12 .comeBack i,
+#jh .col-12 a,
+span {
+    color: #000;
+    font-family: Open Sans;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 39.6px;
+    margin-left: 20px;
+}
+
+#jh .col-12 .comeBack:hover,
+#jh .col-12 .comeBack:hover i,
+#jh .col-12 a:hover,
+#jh .col-12 span:hover {
+    color: #65d1e6;
+}
+
+#ao_jh,
+#quan_jh,
+#phu_kien_jh {
+    position: fixed;
+    top: 112px;
+    left: 0;
+    width: 110%;
+    height: 100%;
+    background-color: #f5f5f5;
+    z-index: 999;
+}
+
+#ao_jh .col-12,
+#quan_jh .col-12,
+#phu_kien_jh .col-12 {
+    border-bottom: 1px solid #aeaeae;
+    margin: 15px 0px;
+}
+
+#ao_jh .col-12 .comeBackJh1,
+#quan_jh .col-12 .comeBackJh2,
+#phu_kien_jh .col-12 .comeBackJh3 {
+    cursor: pointer;
+    color: #000;
+    font-family: Open Sans;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 39.6px;
+}
+
+#ao_jh .col-12 .comeBackJh1 i,
+#ao_jh .col-12 a,
+#ao_jh .col-12 span,
+#quan_jh .col-12 .comeBackJh2 i,
+#quan_jh .col-12 a,
+#quan_jh .col-12 span,
+#phu_kien_jh .col-12 .comeBackJh3 i,
+#phu_kien_jh .col-12 a,
+#phu_kien_jh .col-12 span {
+    color: #000;
+    font-family: Open Sans;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 39.6px;
+    margin-left: 20px;
+}
+
+#ao_jh .col-12 .comeBackJh1:hover,
+#ao_jh .col-12 .comeBackJh1:hover i,
+#ao_jh .col-12 a:hover,
+#ao_jh .col-1 span:hover,
+#quan_jh .col-12 .comeBackJh2:hover,
+#quan_jh .col-12 .comeBackJh2:hover i,
+#quan_jh .col-12 a:hover,
+#quan_jh .col-1 span:hover,
+#phu_kien_jh .col-12 .comeBackJh3:hover,
+#phu_kien_jh .col-12 .comeBackJh3:hover i,
+#phu_kien_jh .col-12 a:hover,
+#phu_kien_jh .col-1 span:hover {
+    color: #65d1e6;
+}
+
+
+/* freelancer */
+
+#free {
+    position: fixed;
+    top: 112px;
+    left: 0;
+    width: 110%;
+    height: 100%;
+    background-color: #f5f5f5;
+    z-index: 999;
+}
+
+#free .col-12 {
+    border-bottom: 1px solid #aeaeae;
+    margin: 15px 0px;
+}
+
+#free .col-12 span {
+    cursor: pointer;
+}
+
+#free .col-12 .comeBack {
+    color: #000;
+    font-family: Open Sans;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 39.6px;
+}
+
+#free .col-12 .comeBack i,
+#free .col-12 a {
+    color: #000;
+    font-family: Open Sans;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 39.6px;
+    margin-left: 20px;
+}
+
+#free .col-12 .comeBack:hover,
+#free .col-12 .comeBack:hover i,
+#free .col-12 a:hover {
+    color: #65d1e6;
+}
+
+#ao_free,
+#quan_free {
+    position: fixed;
+    top: 112px;
+    left: 0;
+    width: 110%;
+    height: 100%;
+    background-color: #f5f5f5;
+    z-index: 999;
+}
+
+#ao_free .col-12,
+#quan_free .col-12 {
+    border-bottom: 1px solid #aeaeae;
+    margin: 15px 0px;
+}
+
+#ao_free .col-12 .comeBackFree1,
+#quan_free .col-12 .comeBackFree2 {
+    cursor: pointer;
+    color: #000;
+    font-family: Open Sans;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 39.6px;
+}
+
+#ao_free .col-12 .comeBackFree1 i,
+#ao_free .col-12 a,
+#quan_free .col-12 .comeBackFree2 i,
+#quan_free .col-12 a {
+    color: #000;
+    font-family: Open Sans;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 39.6px;
+    margin-left: 20px;
+}
+
+#ao_free .col-12 .comeBackFree1:hover,
+#ao_free .col-12 .comeBackFree1:hover i,
+#ao_free .col-12 a:hover,
+#quan_free .col-12 .comeBackFree2:hover,
+#quan_free .col-12 .comeBackFree2:hover i,
+#quan_free .col-12 a:hover {
+    color: #65d1e6;
 }
 
 
@@ -315,22 +506,25 @@ img {
     height: 100%;
     background-color: #f5f5f5;
     z-index: 999;
+    border: none;
+}
+
+#car .card {
+    border: none;
 }
 
 #car .card .card-header {
     text-align: center;
-    font-size: 20px;
-    border: none;
+    font-size: 26px;
     background: #f3f5f6;
-    border-radius: 10px;
-    border-radius: 4px;
     font-family: Open Sans;
     font-weight: 500;
-    line-height: 21px;
+    line-height: 42px;
 }
 
 #car .card .card-body {
     background-color: #f5f5f5;
+    border-radius: 4px;
 }
 
 #car .card .card-body .bi-cart2 {
@@ -434,13 +628,14 @@ img {
     align-items: center;
 }
 
-.fluid-container .container .menu .navbar a {
+.fluid-container .container .menu .navbar span,
+i {
     color: #252a2b;
     font-weight: 700;
     font-size: 0.875rem;
 }
 
-.fluid-container .container .menu .navbar a:hover {
+.fluid-container .container .menu .navbar span:hover {
     color: #820012;
 }
 
@@ -448,10 +643,7 @@ img {
     position: relative;
 }
 
-.fluid-container .container .menu .navbar .hien1 .menu_item1:hover .product-list {
-    display: block;
-}
-
+.fluid-container .container .menu .navbar .hien1 .menu_item1:hover .product-list,
 .fluid-container .container .menu .navbar .hien1 .menu_item2:hover .product-list {
     display: block;
 }

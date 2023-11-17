@@ -15,6 +15,7 @@
     <script src="/js/bootstrap.bundle.min.js"></script>
     <script src="/js/app.js"></script>
     <title>Shop quần áo</title>
+    <link rel="shortcut icon" href="./image/Logo/main-logo.png" type="image/x-icon">
 </head>
 
 <body>
@@ -32,7 +33,7 @@
                 <div class="container-fluid" id="res_mobile">
                     <div class="menu row">
                         <div id="toggle" class="col-2 col-md-2 col-sm-2 col-xl-2">
-                            <i class="bi bi-list"></i>
+                            <i id="toggle" class="bi bi-list"></i>
                         </div>
 
                         <div class="logo col-7 col-md-7 col-sm-7 col-xl-7">
@@ -65,7 +66,7 @@
                             <span id="johnHenry">JOHN HENRY</span>
                         </div>
                         <div class="col-12 col-md-12 col-sm-12 col-xl-12">
-                            <span>FREELANCER</span>
+                            <span id="freelancer">FREELANCER</span>
                         </div>
                         <div class="support">
                             <p class="sup_header">BẠN CẦN HỖ TRỢ?</p>
@@ -82,24 +83,135 @@
                     <!-- john henry -->
                     <div class="johnHenry row" id="jh">
                         <div class="col-12 col-md-12 col-sm-12 col-xl-12">
-                            <a href="">
+                            <div class="comeBack" id="comeBack1">
                                 <i class="bi bi-chevron-left"></i> QUAY VỀ
-                            </a>
+                            </div>
                         </div>
                         <div class="col-12 col-md-12 col-sm-12 col-xl-12">
-                            <a href="">Xem tất cả "JOHN HENRY"</a>
+                            <a href="../pages/john_henry.html">Xem tất cả "JOHN HENRY"</a>
                         </div>
                         <div class="col-12 col-md-12 col-sm-12 col-xl-12">
-                            <a href="">- ÁO JH</a>
+                            <span id="ao-jh">- ÁO JH</span>
                         </div>
                         <div class="col-12 col-md-12 col-sm-12 col-xl-12">
-                            <a href="">- QUẦN JH</a>
+                            <span id="quan-jh">- QUẦN JH</span>
                         </div>
                         <div class="col-12 col-md-12 col-sm-12 col-xl-12">
-                            <a href="">- PHỤ KIÊN JH</a>
+                            <span id="phu-kien-jh">- PHỤ KIÊN JH</span>
+                        </div>
+                    </div>
+                    <div class="ao_jh row" id="ao_jh">
+                        <div class="col-12 col-md-12 col-sm-12 col-xl-12">
+                            <div class="comeBackJh1" id="comeBackJh1">
+                                <i class="bi bi-chevron-left"></i> QUAY VỀ
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-12 col-sm-12 col-xl-12">
+                            <a href="../pages/john_henry.html">Xem tất cả "ÁO JH"</a>
+                        </div>
+                        <div class="col-12 col-md-12 col-sm-12 col-xl-12">
+                            <a href="">- ÁO POLO</a>
+                        </div>
+                        <div class="col-12 col-md-12 col-sm-12 col-xl-12">
+                            <a href="">- ÁO SƠ MI</a>
+                        </div>
+                        <div class="col-12 col-md-12 col-sm-12 col-xl-12">
+                            <a href="">- ÁO THUN</a>
+                        </div>
+                    </div>
+                    <div class="quan_jh row" id="quan_jh">
+                        <div class="col-12 col-md-12 col-sm-12 col-xl-12">
+                            <div class="comeBackJh2" id="comeBackJh2">
+                                <i class="bi bi-chevron-left"></i> QUAY VỀ
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-12 col-sm-12 col-xl-12">
+                            <a href="../pages/john_henry.html">Xem tất cả "QUẦN JH"</a>
+                        </div>
+                        <div class="col-12 col-md-12 col-sm-12 col-xl-12">
+                            <a href="">- QUẦN KHAKU</a>
+                        </div>
+                        <div class="col-12 col-md-12 col-sm-12 col-xl-12">
+                            <a href="">- QUẦN JEANS</a>
+                        </div>
+                        <div class="col-12 col-md-12 col-sm-12 col-xl-12">
+                            <a href="">- QUẦN SHORT</a>
+                        </div>
+                    </div>
+                    <div class="phu_kien_jh row" id="phu_kien_jh">
+                        <div class="col-12 col-md-12 col-sm-12 col-xl-12">
+                            <div class="comeBackJh3" id="comeBackJh3">
+                                <i class="bi bi-chevron-left"></i> QUAY VỀ
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-12 col-sm-12 col-xl-12">
+                            <a href="../pages/john_henry.html">Xem tất cả "PHỤ KIỆN JH"</a>
+                        </div>
+                        <div class="col-12 col-md-12 col-sm-12 col-xl-12">
+                            <a href="">- NÓN LƯỠI TRAI</a>
+                        </div>
+                        <div class="col-12 col-md-12 col-sm-12 col-xl-12">
+                            <a href="">- MẮT KÍNH CAO CẤP</a>
                         </div>
                     </div>
                     <!-- freelancer -->
+                    <div class="freelancer row" id="free">
+                        <div class="col-12 col-md-12 col-sm-12 col-xl-12">
+                            <div class="comeBack" id="comeBack2">
+                                <i class="bi bi-chevron-left"></i> QUAY VỀ
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-12 col-sm-12 col-xl-12">
+                            <a href="../pages/freelancer.html">Xem tất cả "FREELANCER"</a>
+                        </div>
+                        <div class="col-12 col-md-12 col-sm-12 col-xl-12">
+                            <span id="ao-free">- ÁO FREELANCER</span>
+                        </div>
+                        <div class="col-12 col-md-12 col-sm-12 col-xl-12">
+                            <span id="quan-free">- QUẦN FREELANCER</span>
+                        </div>
+                        <div class="col-12 col-md-12 col-sm-12 col-xl-12">
+                            <a href="">- PHỤ KIÊN NỮ</a>
+                        </div>
+                    </div>
+                    <div class="ao_free row" id="ao_free">
+                        <div class="col-12 col-md-12 col-sm-12 col-xl-12">
+                            <div class="comeBackFree1" id="comeBackFree1">
+                                <i class="bi bi-chevron-left"></i> QUAY VỀ
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-12 col-sm-12 col-xl-12">
+                            <a href="../pages/freelancer.html">Xem tất cả "Áo FREELANCER"</a>
+                        </div>
+                        <div class="col-12 col-md-12 col-sm-12 col-xl-12">
+                            <a href="">- ÁO T-SHIRT NỮ </a>
+                        </div>
+                        <div class="col-12 col-md-12 col-sm-12 col-xl-12">
+                            <a href="">- ÁO SƠ MI NỮ</a>
+                        </div>
+                        <div class="col-12 col-md-12 col-sm-12 col-xl-12">
+                            <a href="">- ÁO POLO NỮ</a>
+                        </div>
+                    </div>
+                    <div class="quan_free row" id="quan_free">
+                        <div class="col-12 col-md-12 col-sm-12 col-xl-12">
+                            <div class="comeBackFree2" id="comeBackFree2">
+                                <i class="bi bi-chevron-left"></i> QUAY VỀ
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-12 col-sm-12 col-xl-12">
+                            <a href="../pages/freelancer.html">Xem tất cả "QUẦN FREELANCER"</a>
+                        </div>
+                        <div class="col-12 col-md-12 col-sm-12 col-xl-12">
+                            <a href="">- QUẦN JEANS NỮ</a>
+                        </div>
+                        <div class="col-12 col-md-12 col-sm-12 col-xl-12">
+                            <a href="">- QUẦN TÂY NỮ</a>
+                        </div>
+                        <div class="col-12 col-md-12 col-sm-12 col-xl-12">
+                            <a href="">- QUẦN SHORT NỮ</a>
+                        </div>
+                    </div>
                     <!-- search -->
                     <div class="search" id="sea">
                         <p>Tìm Kiếm</p>
@@ -237,7 +349,7 @@
                                                     </h3>
                                                     <div class="title">
                                                         <div>
-                                                            <a href="" title="quan-khaki">QUẦN KHAKI</a>
+                                                            <a href="" title="phu_kien-khaki">QUẦN KHAKI</a>
                                                         </div>
                                                         <div>
                                                             <a href="" title="quan-jeans">QUẦN JEANS</a>
@@ -422,8 +534,100 @@
         </div>
         <script>
             $(document).ready(function() {
+                //xử lý icon web nhỏ hơn 768px
+                $('#toggle').click(function() {
+                    // Kiểm tra xem jh hoặc free có đang hiển thị hay không
+                    var isJh = $('#jh').is(':visible');
+                    var isAoJh = $('#ao_jh').is(':visible');
+                    var isQuanJh = $('#quan_jh').is(':visible');
+                    var isPhuKienJh = $('#phu_kien_jh').is(':visible');
+                    var isFree = $('#free').is(':visible');
+                    var isAoFree = $('#ao_free').is(':visible');
+                    var isQuanFree = $('#quan_free').is(':visible');
+
+                    // Nếu jh hoặc free đang hiển thị, ẩn chúng đi; nếu không, hiển thị main-menu
+                    if (isJh || isAoJh || isQuanJh || isPhuKienJh || isFree || isAoFree || isQuanFree) {
+                        $('#jh,#ao_jh,quan_jh,#phu_kien_jh, #free,#ao_free,#quan_free').hide();
+                    } else {
+                        $('#main-menu').slideToggle();
+                    }
+                });
+                $('#comeBack1').click(function() {
+                    $('#sea, #log, #car,#jh').hide();
+                    $('#main-menu').slideToggle();
+                });
+                $('#comeBack2').click(function() {
+                    $('#sea, #log, #car,#free').hide();
+                    $('#main-menu').slideToggle();
+                });
+                //xử lý john henry
+                $('#johnHenry').click(function() {
+                    $('#sea, #log, #car,#main-menu').hide();
+                    $('#jh').slideToggle();
+                });
+                $('#ao-jh').click(function() {
+                    $('#sea, #log, #car,#jh').hide();
+                    $('#ao_jh').slideToggle();
+                });
+                $('#quan-jh').click(function() {
+                    $('#sea, #log, #car,#jh').hide();
+                    $('#quan_jh').slideToggle();
+                });
+                $('#phu-kien-jh').click(function() {
+                    $('#sea, #log, #car,#jh').hide();
+                    $('#phu_kien_jh').slideToggle();
+                });
+                $('#comeBackJh1').click(function() {
+                    $('#sea, #log, #car,#ao_jh').hide();
+                    $('#jh').slideToggle();
+                });
+                $('#comeBackJh2').click(function() {
+                    $('#sea, #log, #car,#quan_jh').hide();
+                    $('#jh').slideToggle();
+                });
+                $('#comeBackJh3').click(function() {
+                    $('#sea, #log, #car,#phu_kien_jh').hide();
+                    $('#jh').slideToggle();
+                });
+                //xử lý freelancer
+                $('#freelancer').click(function() {
+                    $('#sea, #log, #car,#main-menu').hide();
+                    $('#free').slideToggle();
+                })
+                $('#ao-free').click(function() {
+                    $('#sea, #log, #car,#free').hide();
+                    $('#ao_free').slideToggle();
+                })
+                $('#quan-free').click(function() {
+                    $('#sea, #log, #car,#free').hide();
+                    $('#quan_free').slideToggle();
+                });
+                $('#comeBackFree1').click(function() {
+                    $('#sea, #log, #car,#ao_free').hide();
+                    $('#free').slideToggle();
+                });
+                $('#comeBackFree2').click(function() {
+                    $('#sea, #log, #car,#quan_free').hide();
+                    $('#free').slideToggle();
+                });
+                //xử lý icon
+                $('#search').click(function() {
+                    $('#sea').slideToggle();
+                    $('#log, #car,#main-menu,#jh,#free,#ao_jh,#quan_jh,#phu_kien_jh,#ao_free,#quan_free').hide();
+                });
+
+                $('#login').click(function() {
+                    $('#log').slideToggle();
+                    $('#sea, #car,#main-menu,#jh,#free,#ao_jh,#quan_jh,#phu_kien_jh,#ao_free,#quan_free').hide();
+                });
+
+                $('#cart').click(function() {
+                    $('#car').slideToggle();
+                    $('#sea, #log,#main-menu,#jh,#free,#ao_jh,#quan_jh,#phu_kien_jh,#ao_free,#quan_free').hide();
+                });
+                //xử lý icon web màn hình lớn hơn 768px
                 $('#searchIcon').click(function() {
-                    $('#loginBox, #cartBox').hide();
+                    $('#loginBox, #cartBox,').hide();
                     $('#searchBox').slideToggle();
                 });
                 $('#loginIcon').click(function() {
@@ -434,26 +638,8 @@
                     $('#loginBox, #searchBox').hide();
                     $('#cartBox').slideToggle();
                 });
-                $('#toggle').click(function() {
-                    $('#sea, #log, #car').hide();
-                    $('#main-menu').slideToggle();
-                });
 
-                $('#search').click(function() {
-                    $('#sea').slideToggle();
-                    $('#log, #car,#main-menu').hide();
-                });
-
-                $('#login').click(function() {
-                    $('#log').slideToggle();
-                    $('#sea, #car,#main-menu').hide();
-                });
-
-                $('#cart').click(function() {
-                    $('#car').slideToggle();
-                    $('#sea, #log,#main-menu').hide();
-                });
-            })
+            });
         </script>
         <!-- slide -->
         <div style="margin-top: 100px;" id="carouselExampleIndicators" class="carousel slide">
