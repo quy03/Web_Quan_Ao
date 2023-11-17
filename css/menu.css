@@ -219,7 +219,7 @@ img {
 
 #jh .col-12 .comeBack i,
 #jh .col-12 a,
-span {
+#jh .col-12 span {
     color: #000;
     font-family: Open Sans;
     font-size: 14px;
@@ -663,6 +663,14 @@ i {
 .fluid-container .container .menu .navbar .hien1 .menu_item1 .product-list .column {
     width: 33%;
     float: left;
+}
+
+.fluid-container .container .menu .navbar .hien1 .menu_item1 .product-list .column .product h3 a {
+    color: #000;
+}
+
+.fluid-container .container .menu .navbar .hien1 .menu_item1 .product-list .column .product h3 a:hover {
+    color: #820012;
 }
 
 .fluid-container .container .menu .navbar .hien1 .menu_item1 .product-list .column .product .title a {
