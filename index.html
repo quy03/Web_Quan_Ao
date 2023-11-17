@@ -1031,22 +1031,10 @@
     <script>
         $(document).ready(function() {
             //xử lý icon web nhỏ hơn 768px
-            $('#toggle').click(function() {
-                // Kiểm tra xem jh hoặc free có đang hiển thị hay không
-                var isJh = $('#jh').is(':visible');
-                var isAoJh = $('#ao_jh').is(':visible');
-                var isQuanJh = $('#quan_jh').is(':visible');
-                var isPhuKienJh = $('#phu_kien_jh').is(':visible');
-                var isFree = $('#free').is(':visible');
-                var isAoFree = $('#ao_free').is(':visible');
-                var isQuanFree = $('#quan_free').is(':visible');
 
-                // Nếu jh hoặc free đang hiển thị, ẩn chúng đi; nếu không, hiển thị main-menu
-                if (isJh || isAoJh || isQuanJh || isPhuKienJh || isFree || isAoFree || isQuanFree) {
-                    $('#jh,#ao_jh,quan_jh,#phu_kien_jh, #free,#ao_free,#quan_free').hide();
-                } else {
-                    $('#main-menu').slideToggle();
-                }
+            $('#toggle').click(function() {
+                $('#jh,#ao_jh,quan_jh,#phu_kien_jh, #free,#ao_free,#quan_free,#sea,#log,#car').hide();
+                $('#main-menu').slideToggle();
             });
             $('#comeBack1').click(function() {
                 $('#sea, #log, #car,#jh').hide();
