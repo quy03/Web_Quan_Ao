@@ -1,34 +1,17 @@
 <?php
-    // Kết nối đến cơ sở dữ liệu MySQL
-    require("./config.php");
-
-    if(isset($_POST["insert"])){
-        // lấy giá trị từ ô nhập liệu
-        // $username = $_POST["username"];
-        $full_name = $_POST["full_name"];
-        $gender = $_POST["gender"];
-        $date_of_birth = $_POST["date_of_birth"];
-        $phone = $_POST["phone"];
-        $email = $_POST["email"];
-        $password = $_POST["fill_password"];
-        $confirm_password = $_POST["confirm_password"];
-
-        if ($password !== $confirm_password) {
-            echo "Mật khẩu và xác nhận mật khẩu không khớp.";
+    require("config.php");
+    session_start();
+    if(isset($_POST["login"])){
+        $email = $_POST["txt_email"];
+        $password = $_POST["txt_password"];
+        $sql = "select * from tbl_customer where email = '".$email."' and password = '" .$password."'";
+        $result = mysqli_query($conn,$sql);
+        if(mysqli_num_rows($result) > 0){
+            $_SESSION["email"] = $email;
+           header("location:  index.php");
         }
         else{
-            // Mã hóa mật khẩu trước khi lưu vào cơ sở dữ liệu
-            $hashed_password = password_hash($password, PASSWORD_DEFAULT);
-
-            // Tạo truy vấn SQL để chèn dữ liệu vào bảng người dùng
-            $sql = "INSERT INTO users (full_name, gender, date_of_birth, phone, email, password) VALUES ('$full_name', '$gender', '$date_of_birth', '$phone', '$email', '$hashed_password')";
-            if(mysqli_query($conn, $sql)){
-                header("location:index.php");
-                echo "Đăng ký thành công!";
-            }
-            else{
-                echo "Đăng ký thất bại: " . $conn->error;
-            }
+            //echo "sai ten dang nhap hoac mat khau";
         }
     }
 ?>
@@ -672,56 +655,104 @@
         </script>
         <!-- register -->
         <div class="register-box" style="margin-top: 150px;">
-            <div class="row justify-content-center">
-                <div class="col-md-1"></div>
-                <div class="col-md-5">
-                    <h1>Tạo tài khoản</h1>
-                </div>
-                <div class="col-md-5">
-                    <div class="form-group">
-                        <input type="text" class="form-control" id="full_name" name="full_name" placeholder="Họ và tên"
-                            required>
+            <form action="register.php" method="post">
+                <div class="row justify-content-center">
+                    <div class="col-md-1"></div>
+                    <div class="col-md-5">
+                        <h1>Tạo tài khoản</h1>
                     </div>
-                    <div class="form-group">
-                        <div class="gender-radio">
-                            <input type="radio" id="male" name="gender" value="Nam" required>
-                            <label for="male">Nam</label>
-                            <input type="radio" id="female" name="gender" value="Nữ" required>
-                            <label for="female">Nữ</label>
+                    <div class="col-md-5">
+                        <div class="form-group">
+                            <input type="text" class="form-control" id="full_name" name="full_name"
+                                placeholder="Họ và tên" required>
+                        </div>
+                        <div class="form-group">
+                            <div class="gender-radio">
+                                <input type="radio" id="male" name="gender" value="Nam" required>
+                                <label for="male">Nam</label>
+                                <input type="radio" id="female" name="gender" value="Nữ" required>
+                                <label for="female">Nữ</label>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <input type="date" class="form-control" id="date_of_birth" name="date_of_birth" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="tel" class="form-control" id="phone" name="phone" placeholder="Số điện thoại"
+                                required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" class="form-control" id="email" name="email" placeholder="Email"
+                                required>
+                        </div>
+                        <div class="form-group">
+                            <input type="password" class="form-control" id="fill_password" name="fill_ password"
+                                placeholder="Mật khẩu" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="password" class="form-control" id="confirm_password" name="confirm_password"
+                                placeholder="Xác nhận mật khẩu" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="show_password">Hiển thị mật khẩu:</label>
+                            <input class="showpass" type="checkbox" id="show_password" onclick="showPassword()">
+                        </div>
+                        <p>Nhấn vào "Đăng ký" quý khách chấp nhận điều khoản dịch vụ của chúng tôi</p>
+                        <div class="event">
+                            <button name="register" value="dangky" type="submit" class="btn btn-danger" onclick="">ĐĂNG
+                                KÝ</button>
+                            <?php
+                                // Kết nối đến cơ sở dữ liệu MySQL
+                                require("config.php");
+
+                                if(isset($_POST["register"])){
+                                    // lấy giá trị từ ô nhập liệu
+                                    $full_name = $_POST["full_name"];
+                                    $gender = $_POST["gender"];
+                                    $date_of_birth = $_POST["date_of_birth"];
+                                    $phone = $_POST["phone"];
+                                    $email = $_POST["email"];
+                                    $password = $_POST["fill_password"];
+                                    $confirm_password = $_POST["confirm_password"];
+
+                                    if ($password != $confirm_password) {
+                                        $check_password = "Mật khẩu và xác nhận mật khẩu không khớp.";
+                                        echo '<p style="color: red; text-align: center; margin-top: -30px;">' . $check_password . '</p>';
+                                    }
+                                    else{
+                                        $sql= "select * from tbl_customer where email= '".$email."'";
+                                        $result=mysqli_query($conn,$sql);
+                                        if(mysqli_num_rows($result)>0){
+                                            $eror_email="Email đã được đăng ký, vui lòng nhập email khác";
+                                            echo '<p style="color: red; text-align: center; margin-top: -30px;">' . $eror_email . '</p>';
+                                        }
+                                        else{
+                                            // Mã hóa mật khẩu trước khi lưu vào cơ sở dữ liệu
+                                            $hashed_password = password_hash($password, PASSWORD_DEFAULT);
+
+                                            $sql = "INSERT INTO users (full_name, gender, date_of_birth, phone, email, password) VALUES ('$full_name', '$gender', '$date_of_birth', '$phone', '$email', '$hashed_password')";
+                                            if(mysqli_query($conn, $sql)){
+                                                header("location:index.php");
+                                                echo "Đăng ký thành công!";
+                                            }
+                                            else{
+                                                echo "Đăng ký thất bại: " . $conn->error;
+                                            }
+                                        }
+                                    }
+                                }
+                            ?>
+                        </div>
+                        <div class="back">
+                            <a href="./index.php">
+                                <i class="bi bi-arrow-left"></i>
+                                <span>Quay lại trang chủ</span>
+                            </a>
                         </div>
                     </div>
-                    <div class="form-group">
-                        <input type="date" class="form-control" id="date_of_birth" name="date_of_birth" required>
-                    </div>
-                    <div class="form-group">
-                        <input type="tel" class="form-control" id="phone" name="phone" placeholder="Số điện thoại"
-                            required>
-                    </div>
-                    <div class="form-group">
-                        <input type="password" class="form-control" id="fill_password" name="fill_ password"
-                            placeholder="Mật khẩu" required>
-                    </div>
-                    <div class="form-group">
-                        <input type="password" class="form-control" id="confirm_password" name="confirm_password"
-                            placeholder="Xác nhận mật khẩu" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="show_password">Hiển thị mật khẩu:</label>
-                        <input class="showpass" type="checkbox" id="show_password" onclick="showPassword()">
-                    </div>
-                    <p>Nhấn vào "Đăng ký" quý khách chấp nhận điều khoản dịch vụ của chúng tôi</p>
-                    <div class="event">
-                        <button type="button" class="btn btn-danger" onclick="">ĐĂNG KÝ</button>
-                    </div>
-                    <div class="back">
-                        <a href="./index.php">
-                            <i class="bi bi-arrow-left"></i>
-                            <span>Quay lại trang chủ</span>
-                        </a>
-                    </div>
+                    <div class="col-md-1 "></div>
                 </div>
-                <div class="col-md-1 "></div>
-            </div>
+            </form>
         </div>
         <script>
         function showPassword() {
