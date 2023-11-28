@@ -1,3 +1,20 @@
+<?php
+    require("config.php");
+    session_start();
+    if(isset($_POST["login"])){
+        $email = $_POST["email"];
+        $password = $_POST["password"];
+        $sql = "select * users where email = '".$email."' and password = '" .$password."'";
+        $result = mysqli_query($conn,$sql);
+        if(mysqli_num_rows($result) > 0){
+            $_SESSION["email"] = $email;
+            header("location:  index.php");
+        }
+        else{
+            //echo "sai ten dang nhap hoac mat khau";
+        }
+    }
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -226,22 +243,39 @@
                 <div class="login" id="log">
                     <div class="card">
                         <div class="card-header">Đăng nhập tài khoản</div>
-                        <div class="card-body">
-                            <div class="form-group">
-                                <label for="username">Tên đăng nhập:</label>
-                                <input type="text" class="form-control" id="username" name="username" required>
+                        <form action="" method="post">
+                            <div class="card-body">
+                                <div class="form-group">
+                                    <label for="username">Email:</label>
+                                    <input type="text" class="form-control" id="email" name="email" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="password">Mật khẩu:</label>
+                                    <input type="password" class="form-control" id="password" name="password" required>
+                                </div>
+                                <div class="event">
+                                    <button type="submt" class="btn btn-danger">Đăng nhập</button>
+                                    <?php
+                                    if(isset($_POST["login"])){
+                                        $email = $_POST["email"];
+                                        $password = $_POST["password"];
+                                        $sql = "select * from users where email = '".$email."' and password = '" .$password."'";
+                                        $result = mysqli_query($conn,$sql);
+                                        if(mysqli_num_rows($result) > 0){
+                                                $_SESSION["email"] = $email;
+                                        }
+                                        else{
+                                            $matkhau= "Bạn nhập sai tên đăng nhập hoặc mật khẩu";
+                                            echo '<p style="color: red; text-align: center; font-size: 8px;">' . $matkhau . '</p>';
+                                        }
+                                    }
+                                ?>
+                                </div>
+                                <p>
+                                    Nếu chưa có tài khoản bấm <a href="register.html">tại đây</a> để đăng ký!
+                                </p>
                             </div>
-                            <div class="form-group">
-                                <label for="password">Mật khẩu:</label>
-                                <input type="password" class="form-control" id="password" name="password" required>
-                            </div>
-                            <div class="event">
-                                <button type="submt" class="btn btn-danger">Đăng nhập</button>
-                            </div>
-                            <p>
-                                Nếu chưa có tài khoản bấm <a href="register.html">tại đây</a> để đăng ký!
-                            </p>
-                        </div>
+                        </form>
                     </div>
                 </div>
                 <!-- cart -->
@@ -280,7 +314,8 @@
                                 <div class="body">
                                     <ul>
                                         <li>
-                                            Sản phẩm mua được phép đổi trong vòng 7 ngày (tính từ ngày quý khách nhận
+                                            Sản phẩm mua được phép đổi trong vòng 7 ngày (tính từ ngày quý khách
+                                            nhận
                                             được hàng). Chúng tôi không chấp nhận hủy đơn hàng.
                                         </li>
                                         <li>
@@ -520,7 +555,8 @@
                                         <div class="body">
                                             <ul>
                                                 <li>
-                                                    Sản phẩm mua được phép đổi trong vòng 7 ngày (tính từ ngày quý khách
+                                                    Sản phẩm mua được phép đổi trong vòng 7 ngày (tính từ ngày quý
+                                                    khách
                                                     nhận được hàng). Chúng tôi không chấp nhận hủy đơn hàng.
                                                 </li>
                                                 <li>
@@ -542,7 +578,8 @@
             //xử lý icon web nhỏ hơn 768px
 
             $('#toggle').click(function() {
-                $('#jh,#ao_jh,quan_jh,#phu_kien_jh, #free,#ao_free,#quan_free,#sea,#log,#car').hide();
+                $('#jh,#ao_jh,quan_jh,#phu_kien_jh, #free,#ao_free,#quan_free,#sea,#log,#car')
+                    .hide();
                 $('#main-menu').slideToggle();
             });
             $('#comeBack1').click(function() {
@@ -701,7 +738,7 @@
                                         $check_password = "Mật khẩu và xác nhận mật khẩu không khớp.";
                                         echo '<p style="color: red; text-align: center; margin-top: -30px;">' . $check_password . '</p>';
                                     } else {
-                                        $sql= "select * from tbl_customer where email= '".$email."'";
+                                        $sql= "select * from users where email= '".$email."'";
                                         $result=mysqli_query($conn,$sql);
                                         if(mysqli_num_rows($result)>0){
                                             $eror_email="Email đã được đăng ký, vui lòng nhập email khác";
@@ -710,13 +747,13 @@
                                         else {
                                             $hashed_password = password_hash($password, PASSWORD_DEFAULT);
 
-                                            $sql = "insert into tbl_customer (full_name, gender, date_of_birth, phone, email, password) VALUES ('$full_name', '$gender', '$date_of_birth', '$phone', '$email', '$hashed_password')";
+                                            $sql = "insert into users(full_name, gender, date_of_birth, phone, email, password) VALUES ('$full_name', '$gender', '$date_of_birth', '$phone', '$email', '$hashed_password')";
                                             
-                                            if (mysqli_query($conn, $sql)) {
-                                                // header("location:index.php");
+                                            if(mysqli_query($conn, $sql)){
                                                 echo "Đăng ký thành công!";
-                                            } else {
-                                                echo "Đăng ký thất bại: " . mysqli_error($conn);
+                                            }
+                                            else{
+                                                echo "Đăng ký thất bại: " . $conn->error;
                                             }
                                         }
                                     }
@@ -769,7 +806,8 @@
                             <ul>
                                 <li>Công ty TNHH T.M.G <br> Mã Số Thuế: 0302966294</li>
                                 <li>
-                                    <span style="font-weight: bold; ">Địa chỉ:</span>172 Nguyễn Trãi, Phường Bến Thành,
+                                    <span style="font-weight: bold; ">Địa chỉ:</span>172 Nguyễn Trãi, Phường Bến
+                                    Thành,
                                     Quận 1, TP. Hồ Chí Minh
                                 </li>
                                 <li>
@@ -882,7 +920,8 @@
                         <ul>
                             <li>Công ty TNHH T.M.G <br> Mã Số Thuế: 0302966294</li>
                             <li>
-                                <span style="font-weight: bold; ">Địa chỉ:</span>172 Nguyễn Trãi, Phường Bến Thành, Quận
+                                <span style="font-weight: bold; ">Địa chỉ:</span>172 Nguyễn Trãi, Phường Bến Thành,
+                                Quận
                                 1, TP. Hồ Chí Minh
                             </li>
                             <li>
