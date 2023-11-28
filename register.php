@@ -679,8 +679,8 @@
                 </div>
                 <div class="col-md-5">
                     <div class="form-group">
-                        <input type="text" class="a form-control" id="full_name" name="full_name"
-                            placeholder="Họ và tên" required>
+                        <input type="text" class="form-control" id="full_name" name="full_name" placeholder="Họ và tên"
+                            required>
                     </div>
                     <div class="form-group">
                         <div class="gender-radio">
@@ -691,18 +691,18 @@
                         </div>
                     </div>
                     <div class="form-group">
-                        <input type="date" class="a form-control" id="date_of_birth" name="date_of_birth" required>
+                        <input type="date" class="form-control" id="date_of_birth" name="date_of_birth" required>
                     </div>
                     <div class="form-group">
-                        <input type="tel" class="a form-control" id="phone" name="phone" placeholder="Số điện thoại"
+                        <input type="tel" class="form-control" id="phone" name="phone" placeholder="Số điện thoại"
                             required>
                     </div>
                     <div class="form-group">
-                        <input type="password" class="a form-control" id="fill_password" name="fill_ password"
+                        <input type="password" class="form-control" id="fill_password" name="fill_ password"
                             placeholder="Mật khẩu" required>
                     </div>
                     <div class="form-group">
-                        <input type="password" class="a form-control" id="confirm_password" name="confirm_password"
+                        <input type="password" class="form-control" id="confirm_password" name="confirm_password"
                             placeholder="Xác nhận mật khẩu" required>
                     </div>
                     <div class="form-group">
