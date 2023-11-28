@@ -1,16 +1,51 @@
+<?php
+    // Kết nối đến cơ sở dữ liệu MySQL
+    require("./config.php");
+
+    if(isset($_POST["insert"])){
+        // lấy giá trị từ ô nhập liệu
+        // $username = $_POST["username"];
+        $full_name = $_POST["full_name"];
+        $gender = $_POST["gender"];
+        $date_of_birth = $_POST["date_of_birth"];
+        $phone = $_POST["phone"];
+        $email = $_POST["email"];
+        $password = $_POST["fill_password"];
+        $confirm_password = $_POST["confirm_password"];
+
+        if ($password !== $confirm_password) {
+            echo "Mật khẩu và xác nhận mật khẩu không khớp.";
+        }
+        else{
+            // Mã hóa mật khẩu trước khi lưu vào cơ sở dữ liệu
+            $hashed_password = password_hash($password, PASSWORD_DEFAULT);
+
+            // Tạo truy vấn SQL để chèn dữ liệu vào bảng người dùng
+            $sql = "INSERT INTO users (full_name, gender, date_of_birth, phone, email, password) VALUES ('$full_name', '$gender', '$date_of_birth', '$phone', '$email', '$hashed_password')";
+            if(mysqli_query($conn, $sql)){
+                header("location:index.php");
+                echo "Đăng ký thành công!";
+            }
+            else{
+                echo "Đăng ký thất bại: " . $conn->error;
+            }
+        }
+    }
+?>
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/css/menu.css">
-    <!-- <link rel="stylesheet" href="/css/register.css"> -->
-    <link rel="stylesheet" href="/css/footer.css">
-    <link rel="stylesheet" href="/css/responsive.css">
-    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/menu.css">
+    <link rel="stylesheet" href="./css/register.css">
+    <link rel="stylesheet" href="./css/footer.css">
+    <link rel="stylesheet" href="./css/responsive.css">
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
-    <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.js"
+        integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
     <script src="/js/bootstrap.bundle.js"></script>
     <script src="/js/bootstrap.bundle.min.js"></script>
     <script src="/js/app.js"></script>
@@ -24,7 +59,7 @@
         <div id="fixed-menu">
             <div class="header row">
                 <div class="center col-md-12 col-sm-12 col-xl-12 col-12">
-                    <img src="/image/logo/chuong.webp" alt="">
+                    <img src="./image/logo/chuong.webp" alt="">
                     <a href="../index.html">MIỄN PHÍ VẬN CHUYỂN VỚI HÓA ĐƠN TỪ 299K</a>
                 </div>
             </div>
@@ -279,10 +314,12 @@
                                 <div class="body">
                                     <ul>
                                         <li>
-                                            Sản phẩm mua được phép đổi trong vòng 7 ngày (tính từ ngày quý khách nhận được hàng). Chúng tôi không chấp nhận hủy đơn hàng.
+                                            Sản phẩm mua được phép đổi trong vòng 7 ngày (tính từ ngày quý khách nhận
+                                            được hàng). Chúng tôi không chấp nhận hủy đơn hàng.
                                         </li>
                                         <li>
-                                            Chính sách đổi trả này chỉ áp dụng đối với SẢN PHẨM NGUYÊN GIÁ, không áp dụng đối với các sản phẩm ƯU ĐÃI.
+                                            Chính sách đổi trả này chỉ áp dụng đối với SẢN PHẨM NGUYÊN GIÁ, không áp
+                                            dụng đối với các sản phẩm ƯU ĐÃI.
                                         </li>
                                     </ul>
                                 </div>
@@ -318,8 +355,8 @@
                                             <div class="product">
                                                 <h3>
                                                     <a href="#">
-                                                    ÁO JH
-                                                </a>
+                                                        ÁO JH
+                                                    </a>
                                                 </h3>
                                                 <div class="title">
                                                     <div>
@@ -343,8 +380,8 @@
                                             <div class="product">
                                                 <h3>
                                                     <a href="#">
-                                                    QUẦN JH
-                                                </a>
+                                                        QUẦN JH
+                                                    </a>
                                                 </h3>
                                                 <div class="title">
                                                     <div>
@@ -364,8 +401,8 @@
                                             <div class="product">
                                                 <h3>
                                                     <a href="#">
-                                                    PHỤ KIỆN JH
-                                                </a>
+                                                        PHỤ KIỆN JH
+                                                    </a>
                                                 </h3>
                                                 <div class="title">
                                                     <div>
@@ -373,8 +410,8 @@
                                                     </div>
                                                     <div>
                                                         <a href="" title="phu-kien-mat-kinh">
-                                                        MẮT KÍNH CAO CẤP
-                                                    </a>
+                                                            MẮT KÍNH CAO CẤP
+                                                        </a>
                                                     </div>
                                                 </div>
 
@@ -442,7 +479,8 @@
                     <div class="col-2 col-md-2 col-sm-2 col-xl-2">
                         <div class="icon row">
                             <!-- tìm kiếm -->
-                            <div class="search-icon col-4 col-md-4 col-sm-4 col-xl-4" id="searchIcon" onclick="showSearchBox()">
+                            <div class="search-icon col-4 col-md-4 col-sm-4 col-xl-4" id="searchIcon"
+                                onclick="showSearchBox()">
                                 <i class="bi bi-search"></i>
                             </div>
                             <div class="search-box card" id="searchBox">
@@ -467,7 +505,8 @@
                                     </div>
                                     <div class="form-group">
                                         <label for="password">Mật khẩu:</label>
-                                        <input type="password" class="form-control" id="password" name="password" required>
+                                        <input type="password" class="form-control" id="password" name="password"
+                                            required>
                                     </div>
                                     <div class="event">
                                         <button type="submt" class="btn btn-danger">Đăng nhập</button>
@@ -515,10 +554,12 @@
                                         <div class="body">
                                             <ul>
                                                 <li>
-                                                    Sản phẩm mua được phép đổi trong vòng 7 ngày (tính từ ngày quý khách nhận được hàng). Chúng tôi không chấp nhận hủy đơn hàng.
+                                                    Sản phẩm mua được phép đổi trong vòng 7 ngày (tính từ ngày quý khách
+                                                    nhận được hàng). Chúng tôi không chấp nhận hủy đơn hàng.
                                                 </li>
                                                 <li>
-                                                    Chính sách đổi trả này chỉ áp dụng đối với SẢN PHẨM NGUYÊN GIÁ, không áp dụng đối với các sản phẩm ƯU ĐÃI.
+                                                    Chính sách đổi trả này chỉ áp dụng đối với SẢN PHẨM NGUYÊN GIÁ,
+                                                    không áp dụng đối với các sản phẩm ƯU ĐÃI.
                                                 </li>
                                             </ul>
                                         </div>
@@ -531,100 +572,103 @@
             </div>
         </div>
         <script>
-            $(document).ready(function() {
-                //xử lý icon web nhỏ hơn 768px
+        $(document).ready(function() {
+            //xử lý icon web nhỏ hơn 768px
 
-                $('#toggle').click(function() {
-                    $('#jh,#ao_jh,quan_jh,#phu_kien_jh, #free,#ao_free,#quan_free,#sea,#log,#car').hide();
-                    $('#main-menu').slideToggle();
-                });
-                $('#comeBack1').click(function() {
-                    $('#sea, #log, #car,#jh').hide();
-                    $('#main-menu').slideToggle();
-                });
-                $('#comeBack2').click(function() {
-                    $('#sea, #log, #car,#free').hide();
-                    $('#main-menu').slideToggle();
-                });
-                //xử lý john henry
-                $('#johnHenry').click(function() {
-                    $('#sea, #log, #car,#main-menu').hide();
-                    $('#jh').slideToggle();
-                });
-                $('#ao-jh').click(function() {
-                    $('#sea, #log, #car,#jh').hide();
-                    $('#ao_jh').slideToggle();
-                });
-                $('#quan-jh').click(function() {
-                    $('#sea, #log, #car,#jh').hide();
-                    $('#quan_jh').slideToggle();
-                });
-                $('#phu-kien-jh').click(function() {
-                    $('#sea, #log, #car,#jh').hide();
-                    $('#phu_kien_jh').slideToggle();
-                });
-                $('#comeBackJh1').click(function() {
-                    $('#sea, #log, #car,#ao_jh').hide();
-                    $('#jh').slideToggle();
-                });
-                $('#comeBackJh2').click(function() {
-                    $('#sea, #log, #car,#quan_jh').hide();
-                    $('#jh').slideToggle();
-                });
-                $('#comeBackJh3').click(function() {
-                    $('#sea, #log, #car,#phu_kien_jh').hide();
-                    $('#jh').slideToggle();
-                });
-                //xử lý freelancer
-                $('#freelancer').click(function() {
-                    $('#sea, #log, #car,#main-menu').hide();
-                    $('#free').slideToggle();
-                })
-                $('#ao-free').click(function() {
-                    $('#sea, #log, #car,#free').hide();
-                    $('#ao_free').slideToggle();
-                })
-                $('#quan-free').click(function() {
-                    $('#sea, #log, #car,#free').hide();
-                    $('#quan_free').slideToggle();
-                });
-                $('#comeBackFree1').click(function() {
-                    $('#sea, #log, #car,#ao_free').hide();
-                    $('#free').slideToggle();
-                });
-                $('#comeBackFree2').click(function() {
-                    $('#sea, #log, #car,#quan_free').hide();
-                    $('#free').slideToggle();
-                });
-                //xử lý icon
-                $('#search').click(function() {
-                    $('#sea').slideToggle();
-                    $('#log, #car,#main-menu,#jh,#free,#ao_jh,#quan_jh,#phu_kien_jh,#ao_free,#quan_free').hide();
-                });
-
-                $('#login').click(function() {
-                    $('#log').slideToggle();
-                    $('#sea, #car,#main-menu,#jh,#free,#ao_jh,#quan_jh,#phu_kien_jh,#ao_free,#quan_free').hide();
-                });
-
-                $('#cart').click(function() {
-                    $('#car').slideToggle();
-                    $('#sea, #log,#main-menu,#jh,#free,#ao_jh,#quan_jh,#phu_kien_jh,#ao_free,#quan_free').hide();
-                });
-                //xử lý icon web màn hình lớn hơn 768px
-                $('#searchIcon').click(function() {
-                    $('#loginBox, #cartBox').hide();
-                    $('#searchBox').slideToggle();
-                });
-                $('#loginIcon').click(function() {
-                    $('#searchBox, #cartBox').hide();
-                    $('#loginBox').slideToggle();
-                });
-                $('#cartIcon').click(function() {
-                    $('#loginBox, #searchBox').hide();
-                    $('#cartBox').slideToggle();
-                });
+            $('#toggle').click(function() {
+                $('#jh,#ao_jh,quan_jh,#phu_kien_jh, #free,#ao_free,#quan_free,#sea,#log,#car').hide();
+                $('#main-menu').slideToggle();
             });
+            $('#comeBack1').click(function() {
+                $('#sea, #log, #car,#jh').hide();
+                $('#main-menu').slideToggle();
+            });
+            $('#comeBack2').click(function() {
+                $('#sea, #log, #car,#free').hide();
+                $('#main-menu').slideToggle();
+            });
+            //xử lý john henry
+            $('#johnHenry').click(function() {
+                $('#sea, #log, #car,#main-menu').hide();
+                $('#jh').slideToggle();
+            });
+            $('#ao-jh').click(function() {
+                $('#sea, #log, #car,#jh').hide();
+                $('#ao_jh').slideToggle();
+            });
+            $('#quan-jh').click(function() {
+                $('#sea, #log, #car,#jh').hide();
+                $('#quan_jh').slideToggle();
+            });
+            $('#phu-kien-jh').click(function() {
+                $('#sea, #log, #car,#jh').hide();
+                $('#phu_kien_jh').slideToggle();
+            });
+            $('#comeBackJh1').click(function() {
+                $('#sea, #log, #car,#ao_jh').hide();
+                $('#jh').slideToggle();
+            });
+            $('#comeBackJh2').click(function() {
+                $('#sea, #log, #car,#quan_jh').hide();
+                $('#jh').slideToggle();
+            });
+            $('#comeBackJh3').click(function() {
+                $('#sea, #log, #car,#phu_kien_jh').hide();
+                $('#jh').slideToggle();
+            });
+            //xử lý freelancer
+            $('#freelancer').click(function() {
+                $('#sea, #log, #car,#main-menu').hide();
+                $('#free').slideToggle();
+            })
+            $('#ao-free').click(function() {
+                $('#sea, #log, #car,#free').hide();
+                $('#ao_free').slideToggle();
+            })
+            $('#quan-free').click(function() {
+                $('#sea, #log, #car,#free').hide();
+                $('#quan_free').slideToggle();
+            });
+            $('#comeBackFree1').click(function() {
+                $('#sea, #log, #car,#ao_free').hide();
+                $('#free').slideToggle();
+            });
+            $('#comeBackFree2').click(function() {
+                $('#sea, #log, #car,#quan_free').hide();
+                $('#free').slideToggle();
+            });
+            //xử lý icon
+            $('#search').click(function() {
+                $('#sea').slideToggle();
+                $('#log, #car,#main-menu,#jh,#free,#ao_jh,#quan_jh,#phu_kien_jh,#ao_free,#quan_free')
+                    .hide();
+            });
+
+            $('#login').click(function() {
+                $('#log').slideToggle();
+                $('#sea, #car,#main-menu,#jh,#free,#ao_jh,#quan_jh,#phu_kien_jh,#ao_free,#quan_free')
+                    .hide();
+            });
+
+            $('#cart').click(function() {
+                $('#car').slideToggle();
+                $('#sea, #log,#main-menu,#jh,#free,#ao_jh,#quan_jh,#phu_kien_jh,#ao_free,#quan_free')
+                    .hide();
+            });
+            //xử lý icon web màn hình lớn hơn 768px
+            $('#searchIcon').click(function() {
+                $('#loginBox, #cartBox').hide();
+                $('#searchBox').slideToggle();
+            });
+            $('#loginIcon').click(function() {
+                $('#searchBox, #cartBox').hide();
+                $('#loginBox').slideToggle();
+            });
+            $('#cartIcon').click(function() {
+                $('#loginBox, #searchBox').hide();
+                $('#cartBox').slideToggle();
+            });
+        });
         </script>
         <!-- register -->
         <div class="register-box" style="margin-top: 150px;">
@@ -635,7 +679,8 @@
                 </div>
                 <div class="col-md-5">
                     <div class="form-group">
-                        <input type="text" class="form-control" id="full_name" name="full_name" placeholder="Họ và tên" required>
+                        <input type="text" class="a form-control" id="full_name" name="full_name"
+                            placeholder="Họ và tên" required>
                     </div>
                     <div class="form-group">
                         <div class="gender-radio">
@@ -646,25 +691,22 @@
                         </div>
                     </div>
                     <div class="form-group">
-                        <input type="date" class="form-control" id="date_of_birth" name="date_of_birth" required>
+                        <input type="date" class="a form-control" id="date_of_birth" name="date_of_birth" required>
                     </div>
                     <div class="form-group">
-                        <input type="tel" class="form-control" id="phone" name="phone" placeholder="Số điện thoại" required>
+                        <input type="tel" class="a form-control" id="phone" name="phone" placeholder="Số điện thoại"
+                            required>
                     </div>
                     <div class="form-group">
-                        <input type="email" class="form-control" id="email" name="email" placeholder="Email" required>
-                    </div>
-
-                    <div class="form-group">
-                        <input type="password" class="form-control" id="fill_password" name="fill_password"
-                            placeholder="Mật khẩu:" required>
+                        <input type="password" class="a form-control" id="fill_password" name="fill_ password"
+                            placeholder="Mật khẩu" required>
                     </div>
                     <div class="form-group">
-                        <input type="password" class="form-control" id="confirm_password" name="confirm_password"
+                        <input type="password" class="a form-control" id="confirm_password" name="confirm_password"
                             placeholder="Xác nhận mật khẩu" required>
                     </div>
                     <div class="form-group">
-                        <label>Hiển thị mật khẩu</label>
+                        <label for="show_password">Hiển thị mật khẩu:</label>
                         <input class="showpass" type="checkbox" id="show_password" onclick="showPassword()">
                     </div>
                     <p>Nhấn vào "Đăng ký" quý khách chấp nhận điều khoản dịch vụ của chúng tôi</p>
@@ -672,7 +714,7 @@
                         <button type="button" class="btn btn-danger" onclick="">ĐĂNG KÝ</button>
                     </div>
                     <div class="back">
-                        <a href="/html/index.html">
+                        <a href="./index.php">
                             <i class="bi bi-arrow-left"></i>
                             <span>Quay lại trang chủ</span>
                         </a>
@@ -682,21 +724,20 @@
             </div>
         </div>
         <script>
-            function showPassword() {
-                var passwordField = document.getElementById("fill_password");
-                var confirmPasswordField = document.getElementById("confirm_password");
-                var showPasswordField = document.getElementById("show_password");
-        
-                if (showPasswordField.checked) {
-                    passwordField.type = "text";
-                    confirmPasswordField.type = "text";
-                } else {
-                    passwordField.type = "password";
-                    confirmPasswordField.type = "password";
-                }
+        function showPassword() {
+            var passwordField = document.getElementById("fill_password");
+            var confirmPasswordField = document.getElementById("confirm_password");
+            var showPasswordField = document.getElementById("show_password");
+
+            if (showPasswordField.checked) {
+                passwordField.type = "text";
+                confirmPasswordField.type = "text";
+            } else {
+                passwordField.type = "password";
+                confirmPasswordField.type = "password";
             }
+        }
         </script>
-        
         <!-- footer -->
         <!-- web -->
         <div class="footer" id="foot_web">
@@ -717,7 +758,8 @@
                             <ul>
                                 <li>Công ty TNHH T.M.G <br> Mã Số Thuế: 0302966294</li>
                                 <li>
-                                    <span style="font-weight: bold; ">Địa chỉ:</span>172 Nguyễn Trãi, Phường Bến Thành, Quận 1, TP. Hồ Chí Minh
+                                    <span style="font-weight: bold; ">Địa chỉ:</span>172 Nguyễn Trãi, Phường Bến Thành,
+                                    Quận 1, TP. Hồ Chí Minh
                                 </li>
                                 <li>
                                     <span style="font-weight: bold; ">Email:</span> cskh@viet-styles.com
@@ -733,48 +775,48 @@
                             <ul>
                                 <li>
                                     <a href=" ">
-                                            HỢP TÁC NHƯỢNG QUYỀN
-                                        </a>
+                                        HỢP TÁC NHƯỢNG QUYỀN
+                                    </a>
                                 </li>
                                 <li>
                                     <a href=" ">
-                                            Ưu Đãi VIP MEMBER
-                                        </a>
+                                        Ưu Đãi VIP MEMBER
+                                    </a>
                                 </li>
                                 <li>
                                     <a href=" ">
-                                            Đăng ký và kiểm tra thành viên
-                                        </a>
+                                        Đăng ký và kiểm tra thành viên
+                                    </a>
                                 </li>
                                 <li>
                                     <a href=" ">
-                                            Hướng dẫn thanh toán
-                                        </a>
+                                        Hướng dẫn thanh toán
+                                    </a>
                                 </li>
                                 <li>
                                     <a href=" ">
-                                            Giao hàng và phí vận chuyển
-                                        </a>
+                                        Giao hàng và phí vận chuyển
+                                    </a>
                                 </li>
                                 <li>
                                     <a href=" ">
-                                            Chính sách đổi trả
-                                        </a>
+                                        Chính sách đổi trả
+                                    </a>
                                 </li>
                                 <li>
                                     <a href=" ">
-                                            Chính sách bảo mật
-                                        </a>
+                                        Chính sách bảo mật
+                                    </a>
                                 </li>
                                 <li>
                                     <a href=" ">
-                                            Điều khoản và thanh toán
-                                        </a>
+                                        Điều khoản và thanh toán
+                                    </a>
                                 </li>
                                 <li>
                                     <a href=" ">
-                                            Tuyển dụng
-                                        </a>
+                                        Tuyển dụng
+                                    </a>
                                 </li>
                             </ul>
                         </div>
@@ -813,7 +855,7 @@
             </div>
         </div>
         <!-- mobile -->
-        <div class="footer_mobile container-fluid" id="foot_mobile">
+        <div class="footer_mobile container-fluid" id="foot_mobile">k
             <div class="footer-content1">
                 <h4 class="footer-title">Giới thiệu</h4>
                 <div class="footer-content">
@@ -829,7 +871,8 @@
                         <ul>
                             <li>Công ty TNHH T.M.G <br> Mã Số Thuế: 0302966294</li>
                             <li>
-                                <span style="font-weight: bold; ">Địa chỉ:</span>172 Nguyễn Trãi, Phường Bến Thành, Quận 1, TP. Hồ Chí Minh
+                                <span style="font-weight: bold; ">Địa chỉ:</span>172 Nguyễn Trãi, Phường Bến Thành, Quận
+                                1, TP. Hồ Chí Minh
                             </li>
                             <li>
                                 <span style="font-weight: bold; ">Email:</span> cskh@viet-styles.com

@@ -30,7 +30,7 @@ body {
     margin-top: 60px;
 }
 
-.fluid-container .register-box .row .col-md-5 input {
+.fluid-container .register-box .row .col-md-5 .a {
     height: 55px;
     border: 1px solid transparent;
     background: #ededed;
@@ -39,6 +39,9 @@ body {
     font-weight: 500;
     margin-bottom: 20px;
 }
+/* .fluid-container .register-box .row .col-md-5 .showpass {
+    height: 12px;
+} */
 
 .fluid-container .register-box .row .col-md-5 input:hover {
     border-radius: 1px solid grey;
