@@ -6,7 +6,11 @@
     $db="csdl_web_ban_quan_ao";
 
     $conn = mysqli_connect($server,$user,$pass,$db);
-    if ($conn->connect_error) {
-        die("Kết nối đến MySQL thất bại: " . $conn->connect_error);
+    if (!$conn) {
+        die("Connection failed: " . mysqli_connect_error());
+    }
+    else 
+    {
+        echo"";
     }
 ?>

@@ -1,20 +1,3 @@
-<?php
-    require("config.php");
-    session_start();
-    if(isset($_POST["login"])){
-        $email = $_POST["txt_email"];
-        $password = $_POST["txt_password"];
-        $sql = "select * from tbl_customer where email = '".$email."' and password = '" .$password."'";
-        $result = mysqli_query($conn,$sql);
-        if(mysqli_num_rows($result) > 0){
-            $_SESSION["email"] = $email;
-           header("location:  index.php");
-        }
-        else{
-            //echo "sai ten dang nhap hoac mat khau";
-        }
-    }
-?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -686,7 +669,7 @@
                                 required>
                         </div>
                         <div class="form-group">
-                            <input type="password" class="form-control" id="fill_password" name="fill_ password"
+                            <input type="password" class="form-control" id="fill_password" name="fill_password"
                                 placeholder="Mật khẩu" required>
                         </div>
                         <div class="form-group">
@@ -695,18 +678,17 @@
                         </div>
                         <div class="form-group">
                             <label for="show_password">Hiển thị mật khẩu:</label>
-                            <input class="showpass" type="checkbox" id="show_password" onclick="showPassword()">
+                            <input style="height: 12px;" class="showpass" type="checkbox" id="show_password"
+                                onclick="showPassword()">
                         </div>
                         <p>Nhấn vào "Đăng ký" quý khách chấp nhận điều khoản dịch vụ của chúng tôi</p>
                         <div class="event">
                             <button name="register" value="dangky" type="submit" class="btn btn-danger" onclick="">ĐĂNG
                                 KÝ</button>
                             <?php
-                                // Kết nối đến cơ sở dữ liệu MySQL
                                 require("config.php");
 
-                                if(isset($_POST["register"])){
-                                    // lấy giá trị từ ô nhập liệu
+                                if (isset($_POST["register"])) {
                                     $full_name = $_POST["full_name"];
                                     $gender = $_POST["gender"];
                                     $date_of_birth = $_POST["date_of_birth"];
@@ -718,25 +700,23 @@
                                     if ($password != $confirm_password) {
                                         $check_password = "Mật khẩu và xác nhận mật khẩu không khớp.";
                                         echo '<p style="color: red; text-align: center; margin-top: -30px;">' . $check_password . '</p>';
-                                    }
-                                    else{
+                                    } else {
                                         $sql= "select * from tbl_customer where email= '".$email."'";
                                         $result=mysqli_query($conn,$sql);
                                         if(mysqli_num_rows($result)>0){
                                             $eror_email="Email đã được đăng ký, vui lòng nhập email khác";
                                             echo '<p style="color: red; text-align: center; margin-top: -30px;">' . $eror_email . '</p>';
-                                        }
-                                        else{
-                                            // Mã hóa mật khẩu trước khi lưu vào cơ sở dữ liệu
+                                        } 
+                                        else {
                                             $hashed_password = password_hash($password, PASSWORD_DEFAULT);
 
-                                            $sql = "INSERT INTO users (full_name, gender, date_of_birth, phone, email, password) VALUES ('$full_name', '$gender', '$date_of_birth', '$phone', '$email', '$hashed_password')";
-                                            if(mysqli_query($conn, $sql)){
-                                                header("location:index.php");
+                                            $sql = "insert into tbl_customer (full_name, gender, date_of_birth, phone, email, password) VALUES ('$full_name', '$gender', '$date_of_birth', '$phone', '$email', '$hashed_password')";
+                                            
+                                            if (mysqli_query($conn, $sql)) {
+                                                // header("location:index.php");
                                                 echo "Đăng ký thành công!";
-                                            }
-                                            else{
-                                                echo "Đăng ký thất bại: " . $conn->error;
+                                            } else {
+                                                echo "Đăng ký thất bại: " . mysqli_error($conn);
                                             }
                                         }
                                     }
