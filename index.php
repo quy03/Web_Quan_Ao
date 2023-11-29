@@ -25,7 +25,7 @@
         <div id="fixed-menu">
             <div class="header row">
                 <div class="center col-md-12 col-sm-12 col-xl-12 col-12">
-                    <img src="/image/logo/chuong.webp" alt="">
+                    <img src="./image/logo/chuong.webp" alt="">
                     <a href="../index.html">MIỄN PHÍ VẬN CHUYỂN VỚI HÓA ĐƠN TỪ 299K</a>
                 </div>
             </div>
@@ -38,7 +38,7 @@
 
                     <div class="logo col-7 col-md-7 col-sm-7 col-xl-7">
                         <a href="../index.html">
-                            <img src="../image/Logo/logo.webp" alt="logo">
+                            <img src="./image/Logo/logo.webp" alt="logo">
                         </a>
                     </div>
                     <div class="col-3 col-md-3 col-sm-3 col-xl-3">
@@ -299,7 +299,7 @@
                 <div class="menu row">
                     <div class="logo col3 col-md-3 col-sm-3 col-xl-3">
                         <a href="../index.html">
-                            <img src="../image/Logo/logo.webp" alt="logo_web">
+                            <img src="./image/Logo/logo.webp" alt="logo_web">
                         </a>
                     </div>
                     <div class="col-7 col-md-7 col-sm-7 col-xl-7">
@@ -649,13 +649,13 @@
             </div>
             <div class="carousel-inner">
                 <div class="carousel-item active">
-                    <img src="image/slide/slide1.webp" class="d-block w-100" alt="...">
+                    <img src="./image/slide/slide1.webp" class="d-block w-100" alt="...">
                 </div>
                 <div class="carousel-item">
-                    <img src="image/slide/slide2.webp" class="d-block w-100" alt="...">
+                    <img src="./image/slide/slide2.webp" class="d-block w-100" alt="...">
                 </div>
                 <div class="carousel-item">
-                    <img src="image/slide/slide3.webp" class="d-block w-100" alt="...">
+                    <img src="./image/slide/slide3.webp" class="d-block w-100" alt="...">
                 </div>
             </div>
             <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
@@ -677,17 +677,17 @@
                     <div class="row row1 ">
                         <div class="col-4 col-md-4 col-sm-4 col-xl-4">
                             <a href=" ">
-                                <img src="/image/sp_index/product1.webp " alt=" ">
+                                <img src="./image/sp_index/product1.webp " alt=" ">
                             </a>
                         </div>
                         <div class="col-4 col-md-4 col-sm-4 col-xl-4">
                             <a href=" ">
-                                <img src="/image/sp_index/product2.webp " alt=" ">
+                                <img src="./image/sp_index/product2.webp " alt=" ">
                             </a>
                         </div>
                         <div class="col-4 col-md-4 col-sm-4 col-xl-4">
                             <a href=" ">
-                                <img src="/image/sp_index/product3.webp " alt=" ">
+                                <img src="./image/sp_index/product3.webp " alt=" ">
                             </a>
                         </div>
                     </div>
@@ -701,7 +701,7 @@
                                             <div class="product-img ">
                                                 <a href=" " class="yeuthichtraitim "></a>
                                                 <a href=" ">
-                                                    <img src="/image/sp_index/product4.webp " alt=" ">
+                                                    <img src="./image/sp_index/product4.webp " alt=" ">
                                                 </a>
                                             </div>
                                             <div class="product-detail ">
@@ -725,7 +725,7 @@
                                             <div class="product-img ">
                                                 <a href=" " class="yeuthichtraitim "></a>
                                                 <a href=" ">
-                                                    <img src="/image/sp_index/product5.webp " alt=" ">
+                                                    <img src="./image/sp_index/product5.webp " alt=" ">
                                                 </a>
                                             </div>
                                             <div class="product-detail ">
@@ -751,7 +751,7 @@
                                             <div class="product-img ">
                                                 <a href=" " class="yeuthichtraitim "></a>
                                                 <a href=" ">
-                                                    <img src="/image/sp_index/product6.webp " alt=" ">
+                                                    <img src="./image/sp_index/product6.webp " alt=" ">
                                                 </a>
                                             </div>
                                             <div class="product-detail ">
@@ -773,7 +773,7 @@
                                             <div class="product-img ">
                                                 <a href=" " class="yeuthichtraitim "></a>
                                                 <a href=" ">
-                                                    <img src="/image/sp_index/product7.webp " alt=" ">
+                                                    <img src="./image/sp_index/product7.webp " alt=" ">
                                                 </a>
                                             </div>
                                             <div class="product-detail ">
@@ -795,7 +795,7 @@
                         </div>
                         <div class="col-6 col-md-6 col-sm-6 col-xl-6">
                             <a href=" ">
-                                <img src="/image/sp_index/product8.webp " alt=" ">
+                                <img src="./image/sp_index/product8.webp " alt=" ">
                             </a>
                         </div>
                     </div>
@@ -808,7 +808,7 @@
                         <div class="col-6 col-md-6 col-sm-6 col-xl-6 ">
                             <div class="motasanphamlon ">
                                 <a href="# ">
-                                    <img src="/image/sp_index/product9.webp " alt=" ">
+                                    <img src="./image/sp_index/product9.webp " alt=" ">
                                 </a>
                             </div>
                         </div>
@@ -817,22 +817,22 @@
                                 <div class="row ">
                                     <div class="col-6 col-md-6 col-sm-6 col-xl-6  p1 ">
                                         <a href=" ">
-                                            <img src="/image/sp_index/product10.webp " alt=" ">
+                                            <img src="./image/sp_index/product10.webp " alt=" ">
                                         </a>
                                     </div>
                                     <div class="col-6 col-md-6 col-sm-6 col-xl-6  p1 ">
                                         <a href=" ">
-                                            <img src="/image/sp_index/product11.webp " alt=" ">
+                                            <img src="./image/sp_index/product11.webp " alt=" ">
                                         </a>
                                     </div>
                                     <div class="col-6 col-md-6 col-sm-6 col-xl-6  p1 ">
                                         <a href=" ">
-                                            <img src="/image/sp_index/product12.webp " alt=" ">
+                                            <img src="./image/sp_index/product12.webp " alt=" ">
                                         </a>
                                     </div>
                                     <div class="col-6 col-md-6 col-sm-6 col-xl-6  p1 ">
                                         <a href=" ">
-                                            <img src="/image/sp_index/product13.webp " alt=" ">
+                                            <img src="./image/sp_index/product13.webp " alt=" ">
                                         </a>
                                     </div>
                                 </div>
@@ -843,7 +843,7 @@
                     <div class="container ">
                         <!-- logo -->
                         <div class="logo-center ">
-                            <img src="/image/logo/logo_freelancer.png " alt=" ">
+                            <img src="./image/logo/logo_freelancer.png " alt=" ">
                         </div>
                         <!-- text -->
                         <div class="text-center ">
@@ -858,41 +858,53 @@
                             </p>
                         </div>
                         <!-- sản phẩm -->
-                        <div class="row ">
+                        <div id="san_pham" class="row ">
                             <div class="col-12 col-md-12 col-sm-12 col-xl-12 ">
                                 <div class="motasanphamnho2 ">
                                     <div class="row ">
                                         <div class="col-sm-3 col-md-3 col-xs-6 ">
+                                            <span class="an_tren1 motasanpham ">
+                                                <span>ÁO BLOSE</span>
+                                            </span>
                                             <a href=" ">
-                                                <img src="/image/sp_index/product14.webp " alt=" ">
+                                                <img src="./image/sp_index/product14.webp " alt=" ">
                                             </a>
-                                            <span class="motasanpham ">
+                                            <span class="an_duoi1 motasanpham ">
                                                 <span>ÁO BLOSE</span>
                                             </span>
                                         </div>
                                         <div class="col-sm-3 col-md-3 nguoc_lai col-xs-6 ">
-                                            <span class="motasanpham ">
+                                            <span class="an_tren2 motasanpham ">
                                                 <span>ÁO SƠ MI</span>
                                             </span>
                                             <a href=" ">
-                                                <img src="/image/sp_index/product15.webp " alt=" ">
+                                                <img src="./image/sp_index/product15.webp " alt=" ">
                                             </a>
+                                            <span class="an_duoi2 motasanpham ">
+                                                <span>ÁO SƠ MI</span>
+                                            </span>
                                         </div>
                                         <div class="col-sm-3 col-md-3 col-xs-6 ">
+                                            <span class="an_tren3 motasanpham ">
+                                                <span>CHÂN VÁY</span>
+                                            </span>
                                             <a href=" ">
-                                                <img src="/image/sp_index/product16.webp " alt=" ">
+                                                <img src="./image/sp_index/product16.webp " alt=" ">
                                             </a>
-                                            <span class="motasanpham ">
+                                            <span class="an_duoi3 motasanpham">
                                                 <span>CHÂN VÁY</span>
                                             </span>
                                         </div>
                                         <div class="col-sm-3 col-md-3 nguoc_lai col-xs-6 ">
-                                            <span class="motasanpham ">
+                                            <span class="an_tren4 motasanpham ">
                                                 <span>ÁO BLAZER</span>
                                             </span>
                                             <a href=" ">
-                                                <img src="/image/sp_index/product17.webp " alt=" ">
+                                                <img src="./image/sp_index/product17.webp " alt=" ">
                                             </a>
+                                            <span class="an_duoi4 motasanpham ">
+                                                <span>ÁO BLAZER</span>
+                                            </span>
                                         </div>
 
                                     </div>
@@ -905,34 +917,34 @@
             </div>
         </div>
         <!-- hệ thông của hàng -->
-        <div class="hethongcuahang ">
-            <div class="container ">
-                <div class="row ">
-                    <div class="col-md-12 ">
-                        <div class="motahethong ">
-                            <div class="row ">
-                                <div class="col-md-6 ">
-                                    <div class="text ">
+        <div id="htch" class=" hethongcuahang ">
+            <div class=" container ">
+                <div class=" row ">
+                    <div class=" col-md-12 ">
+                        <div class=" motahethong ">
+                            <div class=" row ">
+                                <div class=" col-md-6 ">
+                                    <div class=" text ">
                                         <h3>Hệ Thống Cửa Hàng</h3>
-                                        <div class="doanvan ">
+                                        <div class=" doanvan ">
                                             Hiện nay thương hiệu JOHN HENRY & FREELANCER đã có mặt tại hầu hết các tỉnh,
                                             thành phố trên toàn quốc. Không gian mua sắm thời trang hàng hiệu đẳng cấp,
                                             sang trọng nhưng cũng không kém phần thoải mái, tiện nghi là điều quý khách
                                             hàng sẽ cảm nhận được
                                             khi ghé thăm bất cứ cửa hàng nào của JOHN HENRY.
                                         </div>
-                                        <div class="text-center ">
-                                            <a href=" " class="cuahanglink ">ĐỊA CHỈ CỬA HÀNG </a>
+                                        <div class=" text-center ">
+                                            <a href=" " class=" cuahanglink ">ĐỊA CHỈ CỬA HÀNG </a>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col-md-6 ">
-                                    <div class="myvideo ">
-                                        <iframe width="100% " height="354 "
-                                            src="https://www.youtube.com/embed/j69-bfQgBms "
-                                            title="JOHN HENRY - TOP 10 Thương Hiệu Mạnh Quốc Gia 2023 " frameborder="0 "
-                                            allow="accelerometer; autoplay; clipboard-write;
-                        encrypted-media; gyroscope; picture-in-picture; web-share " allowfullscreen></iframe>
+                                <div class=" col-md-6 ">
+                                    <div class=" myvideo ">
+                                        <iframe width=" 100% " height=" 354 "
+                                            src=" https://www.youtube.com/embed/j69-bfQgBms "
+                                            title=" JOHN HENRY - TOP 10 Thương Hiệu Mạnh Quốc Gia 2023 " frameborder="
+            0 " allow=" accelerometer; autoplay; clipboard-write; encrypted-media;
+            gyroscope; picture-in-picture; web-share " allowfullscreen></iframe>
                                     </div>
                                 </div>
                             </div>
@@ -942,7 +954,7 @@
             </div>
         </div>
         <!-- footer -->
-        <div class="fluid-container">
+        <div class=" fluid-container">
             <!-- web -->
             <div class="footer" id="foot_web">
                 <div class="container">
@@ -951,11 +963,11 @@
                             <h4>Giới Thiệu</h4>
                             <div class="logo">
                                 <a href=" ">
-                                    <img src="../image/Logo/logo1.webp" alt=" ">
+                                    <img src="./image/Logo/logo1.webp" alt=" ">
                                 </a>
 
                                 <a href=" ">
-                                    <img src="../image/Logo/logo2.webp" alt=" ">
+                                    <img src="./image/Logo/logo2.webp" alt=" ">
                                 </a>
                             </div>
                             <div>
@@ -1030,24 +1042,24 @@
                         <div class="logo">
                             <div class="logo_lon">
                                 <a href="# ">
-                                    <img src="../image/Logo/logo3.webp" alt=" ">
+                                    <img src="./image/Logo/logo3.webp" alt=" ">
                                 </a>
                             </div>
                             <div class="logo_nho">
                                 <a href=" ">
-                                    <img src="../image/Logo/logo4.webp" alt=" ">
+                                    <img src="./image/Logo/logo4.webp" alt=" ">
                                 </a>
 
                                 <a href=" ">
-                                    <img src="../image/Logo/logo5.webp" alt=" ">
+                                    <img src="./image/Logo/logo5.webp" alt=" ">
                                 </a>
 
                                 <a href=" ">
-                                    <img src="../image/Logo/logo6.webp" alt=" ">
+                                    <img src="./image/Logo/logo6.webp" alt=" ">
                                 </a>
 
                                 <a href=" ">
-                                    <img src="../image/Logo/logo7.webp" alt=" ">
+                                    <img src="./image/Logo/logo7.webp" alt=" ">
                                 </a>
                             </div>
                         </div>
@@ -1065,10 +1077,10 @@
                     <div class="footer-content">
                         <div class="footer-logo">
                             <a href="">
-                                <img src="../image/Logo/logo1.webp" alt="">
+                                <img src="./image/Logo/logo1.webp" alt="">
                             </a>
                             <a href="">
-                                <img src="../image/Logo/logo2.webp" alt="">
+                                <img src="./image/Logo/logo2.webp" alt="">
                             </a>
                         </div>
                         <div class="footer-list">
@@ -1125,23 +1137,23 @@
                     <div class="logo">
                         <div class="logo_nho">
                             <a href=" ">
-                                <img src="../image/Logo/logo4.webp" alt=" ">
+                                <img src="./image/Logo/logo4.webp" alt=" ">
                             </a>
 
                             <a href=" ">
-                                <img src="../image/Logo/logo5.webp" alt=" ">
+                                <img src="./image/Logo/logo5.webp" alt=" ">
                             </a>
                             <a href=" ">
-                                <img src="../image/Logo/logo6.webp" alt=" ">
+                                <img src="./image/Logo/logo6.webp" alt=" ">
                             </a>
 
                             <a href=" ">
-                                <img src="../image/Logo/logo7.webp" alt=" ">
+                                <img src="./image/Logo/logo7.webp" alt=" ">
                             </a>
                         </div>
                         <div class="logo_lon">
                             <a href=" ">
-                                <img src="../image/Logo/logo3.webp" alt=" ">
+                                <img src="./image/Logo/logo3.webp" alt=" ">
                             </a>
                         </div>
                     </div>

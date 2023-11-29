@@ -4,14 +4,25 @@
     if(isset($_POST["login"])){
         $email = $_POST["email"];
         $password = $_POST["password"];
-        $sql = "select * users where email = '".$email."' and password = '" .$password."'";
-        $result = mysqli_query($conn,$sql);
-        if(mysqli_num_rows($result) > 0){
-            $_SESSION["email"] = $email;
-            header("location:  index.php");
+        $sql = "SELECT * FROM users WHERE email = '".$email."'";
+        $result = mysqli_query($conn, $sql);
+
+        if($result && mysqli_num_rows($result) > 0){
+            $row = mysqli_fetch_assoc($result);
+
+            // Use password_verify to check the hashed password
+            if(password_verify($password, $row['password'])){
+                $_SESSION["email"] = $email;
+                header("location:index.php");
+            }
+            else{
+                // Password doesn't match
+                // echo "sai mat khau";
+            }
         }
         else{
-            //echo "sai ten dang nhap hoac mat khau";
+            // User not found
+            // echo "sai ten dang nhap hoac mat khau";
         }
     }
 ?>
@@ -55,7 +66,7 @@
 
                     <div class="logo col-7 col-md-7 col-sm-7 col-xl-7">
                         <a href="../index.html">
-                            <img src="../image/Logo/logo.webp" alt="logo">
+                            <img src="./image/Logo/logo.webp" alt="logo">
                         </a>
                     </div>
                     <div class="col-3 col-md-3 col-sm-3 col-xl-3">
@@ -254,22 +265,36 @@
                                     <input type="password" class="form-control" id="password" name="password" required>
                                 </div>
                                 <div class="event">
-                                    <button type="submt" class="btn btn-danger">Đăng nhập</button>
+                                    <button name="login" type="submit" class="btn btn-danger">Đăng nhập</button>
                                     <?php
-                                    if(isset($_POST["login"])){
-                                        $email = $_POST["email"];
-                                        $password = $_POST["password"];
-                                        $sql = "select * from users where email = '".$email."' and password = '" .$password."'";
-                                        $result = mysqli_query($conn,$sql);
-                                        if(mysqli_num_rows($result) > 0){
-                                                $_SESSION["email"] = $email;
+                                        if(isset($_POST["login"])){
+                                            $email = $_POST["email"];
+                                            $password = $_POST["password"];
+                                            $sql = "SELECT * FROM users WHERE email = '".$email."'";
+                                            $result = mysqli_query($conn, $sql);
+
+                                            if($result && mysqli_num_rows($result) > 0){
+                                                $row = mysqli_fetch_assoc($result);
+
+                                                // Use password_verify to check the hashed password
+                                                if(password_verify($password, $row['password'])){
+                                                    $_SESSION["email"] = $email;
+                                                    // header("location:index.php");
+                                                }
+                                                else{
+                                                    // Password doesn't match
+                                                    $matkhau = "Bạn nhập sai tên đăng nhập hoặc mật khẩu";
+                                                    echo '<p style="color: red; text-align: center; font-size: 16px;">' . $matkhau . '</p>';
+                                                }
+                                            }
+                                            else{
+                                                // User not found
+                                                $matkhau = "Bạn nhập sai tên đăng nhập hoặc mật khẩu";
+                                                echo '<p style="color: red; text-align: center; font-size: 16px;">' . $matkhau . '</p>';
+                                            }
                                         }
-                                        else{
-                                            $matkhau= "Bạn nhập sai tên đăng nhập hoặc mật khẩu";
-                                            echo '<p style="color: red; text-align: center; font-size: 8px;">' . $matkhau . '</p>';
-                                        }
-                                    }
-                                ?>
+                                    ?>
+
                                 </div>
                                 <p>
                                     Nếu chưa có tài khoản bấm <a href="register.html">tại đây</a> để đăng ký!
@@ -307,7 +332,6 @@
                                         </tr>
                                     </tbody>
                                 </table>
-
                             </div>
                             <div class="cart-policy">
                                 <h4 class="head">Thân Gửi Qúy Khách Hàng:</h4>
@@ -334,7 +358,7 @@
                 <div class="menu row">
                     <div class="logo col3 col-md-3 col-sm-3 col-xl-3">
                         <a href="../index.html">
-                            <img src="../image/Logo/logo.webp" alt="logo_web">
+                            <img src="./image/Logo/logo.webp" alt="logo_web">
                         </a>
                     </div>
                     <div class="col-7 col-md-7 col-sm-7 col-xl-7">
@@ -499,23 +523,54 @@
                             </div>
                             <div class="login-box card" id="loginBox">
                                 <div class="card-header">Đăng nhập</div>
-                                <div class="card-body">
-                                    <div class="form-group">
-                                        <label for="username">Tên đăng nhập:</label>
-                                        <input type="text" class="form-control" id="username" name="username" required>
+                                <form action="" method="post">
+                                    <div class="card-body">
+                                        <div class="form-group">
+                                            <label for="username">Email:</label>
+                                            <input type="text" class="form-control" id="email" name="email" required>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="password">Mật khẩu:</label>
+                                            <input type="password" class="form-control" id="password" name="password"
+                                                required>
+                                        </div>
+                                        <div class="event">
+                                            <button name="login" type="submit" class="btn btn-danger">Đăng nhập</button>
+                                            <?php
+                                                if(isset($_POST["login"])){
+                                                    $email = $_POST["email"];
+                                                    $password = $_POST["password"];
+                                                    $sql = "SELECT * FROM users WHERE email = '".$email."'";
+                                                    $result = mysqli_query($conn, $sql);
+                                            
+                                                    if($result && mysqli_num_rows($result) > 0){
+                                                        $row = mysqli_fetch_assoc($result);
+                                            
+                                                        // Use password_verify to check the hashed password
+                                                        if(password_verify($password, $row['password'])){
+                                                            $_SESSION["email"] = $email;
+                                                            // header("location:index.php");
+                                                        }
+                                                        else{
+                                                            // Password doesn't match
+                                                            $matkhau = "Bạn nhập sai tên đăng nhập hoặc mật khẩu";
+                                                            echo '<p style="color: red; text-align: center; font-size: 16px;">' . $matkhau . '</p>';
+                                                        }
+                                                    }
+                                                    else{
+                                                        // User not found
+                                                        $matkhau = "Bạn nhập sai tên đăng nhập hoặc mật khẩu";
+                                                        echo '<p style="color: red; text-align: center; font-size: 16px;">' . $matkhau . '</p>';
+                                                    }
+                                                }
+                                            ?>
+
+                                        </div>
+                                        <p>
+                                            Nếu chưa có tài khoản bấm <a href="register.html">tại đây</a> để đăng ký!
+                                        </p>
                                     </div>
-                                    <div class="form-group">
-                                        <label for="password">Mật khẩu:</label>
-                                        <input type="password" class="form-control" id="password" name="password"
-                                            required>
-                                    </div>
-                                    <div class="event">
-                                        <button type="submt" class="btn btn-danger">Đăng nhập</button>
-                                    </div>
-                                    <p>
-                                        Nếu chưa có tài khoản bấm <a href="register.html">tại đây</a> để đăng ký!
-                                    </p>
-                                </div>
+                                </form>
                             </div>
                             <!-- giỏ hàng -->
                             <div class="cart col-4 col-md-4 col-sm-4 col-xl-4" id="cartIcon" onclick="showCartBox()">
@@ -795,11 +850,11 @@
                         <h4>Giới Thiệu</h4>
                         <div class="logo">
                             <a href=" ">
-                                <img src="../image/Logo/logo1.webp" alt=" ">
+                                <img src="./image/Logo/logo1.webp" alt=" ">
                             </a>
 
                             <a href=" ">
-                                <img src="../image/Logo/logo2.webp" alt=" ">
+                                <img src="./image/Logo/logo2.webp" alt=" ">
                             </a>
                         </div>
                         <div>
@@ -875,24 +930,24 @@
                     <div class="logo">
                         <div class="logo_lon">
                             <a href="# ">
-                                <img src="../image/Logo/logo3.webp" alt=" ">
+                                <img src="./image/Logo/logo3.webp" alt=" ">
                             </a>
                         </div>
                         <div class="logo_nho">
                             <a href=" ">
-                                <img src="../image/Logo/logo4.webp" alt=" ">
+                                <img src="./image/Logo/logo4.webp" alt=" ">
                             </a>
 
                             <a href=" ">
-                                <img src="../image/Logo/logo5.webp" alt=" ">
+                                <img src="./image/Logo/logo5.webp" alt=" ">
                             </a>
 
                             <a href=" ">
-                                <img src="../image/Logo/logo6.webp" alt=" ">
+                                <img src="./image/Logo/logo6.webp" alt=" ">
                             </a>
 
                             <a href=" ">
-                                <img src="../image/Logo/logo7.webp" alt=" ">
+                                <img src="./image/Logo/logo7.webp" alt=" ">
                             </a>
                         </div>
                     </div>
@@ -910,10 +965,10 @@
                 <div class="footer-content">
                     <div class="footer-logo">
                         <a href="">
-                            <img src="../image/Logo/logo1.webp" alt="">
+                            <img src="./image/Logo/logo1.webp" alt="">
                         </a>
                         <a href="">
-                            <img src="../image/Logo/logo2.webp" alt="">
+                            <img src="./image/Logo/logo2.webp" alt="">
                         </a>
                     </div>
                     <div class="footer-list">
@@ -971,23 +1026,23 @@
                 <div class="logo">
                     <div class="logo_nho">
                         <a href=" ">
-                            <img src="../image/Logo/logo4.webp" alt=" ">
+                            <img src="./image/Logo/logo4.webp" alt=" ">
                         </a>
 
                         <a href=" ">
-                            <img src="../image/Logo/logo5.webp" alt=" ">
+                            <img src="./image/Logo/logo5.webp" alt=" ">
                         </a>
                         <a href=" ">
-                            <img src="../image/Logo/logo6.webp" alt=" ">
+                            <img src="./image/Logo/logo6.webp" alt=" ">
                         </a>
 
                         <a href=" ">
-                            <img src="../image/Logo/logo7.webp" alt=" ">
+                            <img src="./image/Logo/logo7.webp" alt=" ">
                         </a>
                     </div>
                     <div class="logo_lon">
                         <a href=" ">
-                            <img src="../image/Logo/logo3.webp" alt=" ">
+                            <img src="./image/Logo/logo3.webp" alt=" ">
                         </a>
                     </div>
                 </div>
