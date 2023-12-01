@@ -1,0 +1,41 @@
+.layout-info-account{
+    margin-top: 200px;
+    margin-bottom: 70px;
+}
+.layout-info-account .title-infor-account{
+    font-size: 42;
+    font-weight: 700;
+}
+.layout-info-account .container{
+    padding-top: 40px;
+}
+.layout-info-account .container h3{
+    font-size:15px;
+    font-weight:700;
+    margin:0px 0px 30px;
+    text-transform:uppercase;
+}
+.layout-info-account .container li a{
+    text-decoration: none;
+    color: #2c3d40;
+    font-size:14px;
+    padding:5px 0px;
+}
+.layout-info-account .container li a:hover{
+    color: #65d1e6;
+}
+.layout-info-account .container .title-detail{
+    color:#252a2b;
+    font-size:14px;
+    font-weight:700;
+    text-transform:uppercase;
+}
+.layout-info-account .container h2.name_account{
+    color:#252a2b;
+    font-weight:500;
+    /* margin:10px 0px 5px; */
+}
+.layout-info-account .container p{
+    color:#252a2b;
+    font-size:14px;
+}

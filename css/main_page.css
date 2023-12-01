@@ -152,7 +152,7 @@ img {
 
 .row.product .container .logo-center img {
     max-width: 25rem;
-    text-align: center;
+    height: 100px;
 }
 
 .row.product .container .text-center .text {
