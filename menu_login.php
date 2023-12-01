@@ -228,7 +228,7 @@
                         <div class="card-body">
                             <span>Trịnh Bảo Quý</span>
                             <a href="index.php?act=account">Tài khoản của tôi</a>
-                            <a href="index.php?act=logout">Đăng xuất</a>
+                            <a href="./screen_logout.php">Đăng xuất</a>
                         </div>
 
                     </div>
@@ -457,7 +457,7 @@
                                 <div class="card-body">
                                     <span>Trịnh Bảo Quý</span>
                                     <a href="index.php?act=account">Tài khoản của tôi</a>
-                                    <a href="index.php?act=logout">Đăng xuất</a>
+                                    <a href="./screen_logout.php">Đăng xuất</a>
                                 </div>
                             </div>
                             <!-- giỏ hàng -->

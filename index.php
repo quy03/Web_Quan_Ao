@@ -11,12 +11,11 @@
         include("./menu_logout.php");
     }
     // Kiểm tra nếu người dùng đăng xuất
-    if (isset($_GET["act"]) && $_GET["act"] == "logout") {
-        session_destroy();
-        include("./main_page.php");
-        include("./footer.php");
-        exit();
-    }
+    // if ($_GET["act"] == "out") {
+    //     session_destroy();
+    //     header("location:screen_logout.php");
+    //     exit();
+    // }
     switch($_GET["act"]){
         case "main_page":
             include("./main_page.php");
