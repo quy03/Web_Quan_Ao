@@ -1,3 +1,6 @@
+.container a{
+    text-decoration: none;
+}
 .container .collection-wrap {
     margin-top: 200px;
 }

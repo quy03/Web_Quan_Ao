@@ -6,33 +6,18 @@
     }
     
     if (isLoggedIn()) {
-        include("./menu_login.php");
-    } else {
-        include("./menu_logout.php");
-    }
-    // Kiểm tra nếu người dùng đăng xuất
-    // if ($_GET["act"] == "out") {
-    //     session_destroy();
-    //     header("location:screen_logout.php");
-    //     exit();
-    // }
-    switch($_GET["act"]){
-        case "main_page":
-            include("./main_page.php");
-            break;
-
-        case "register":
-            include("./register.php");
-            break;
-
-        case "account":
-            include("./info_account.php");
-            break;
-
-        default:
-            include("./main_page.php");
-            break;
-    };
+        include("./screen_login.php");
+        if (isset($_GET["act"]) && $_GET["act"] == "logout") {
+            session_destroy();
+            // Ngăn chặn trình duyệt lưu trữ cache
+            header("Cache-Control: no-cache, must-revalidate");
     
-    include("./footer.php");
+            // Chuyển hướng đến trang logout
+            echo '<script>window.location.href = "screen_logout.php";</script>';
+            exit();
+        }
+    }
+    else{
+        include('./screen_logout.php');
+    }
 ?>

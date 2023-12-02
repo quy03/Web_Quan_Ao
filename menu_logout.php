@@ -48,7 +48,7 @@
             <div class="header row">
                 <div class="center col-md-12 col-sm-12 col-xl-12 col-12">
                     <img src="./image/logo/chuong.webp" alt="">
-                    <a href="../index.html">MIỄN PHÍ VẬN CHUYỂN VỚI HÓA ĐƠN TỪ 299K</a>
+                    <a href="index.php?act=main_page">MIỄN PHÍ VẬN CHUYỂN VỚI HÓA ĐƠN TỪ 299K</a>
                 </div>
             </div>
             <!-- responsive_mobile -->
@@ -59,7 +59,7 @@
                     </div>
 
                     <div class="logo col-7 col-md-7 col-sm-7 col-xl-7">
-                        <a href="../index.html">
+                        <a href="index.php?act=main_page">
                             <img src="./image/Logo/logo.webp" alt="logo">
                         </a>
                     </div>
@@ -347,7 +347,7 @@
             <div class="container" id="res_web">
                 <div class="menu row">
                     <div class="logo col3 col-md-3 col-sm-3 col-xl-3">
-                        <a href="../index.html">
+                        <a href="index.php?act=main_page">
                             <img src="./image/Logo/logo.webp" alt="logo_web">
                         </a>
                     </div>

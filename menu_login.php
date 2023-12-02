@@ -23,7 +23,7 @@
             <div class="header row">
                 <div class="center col-md-12 col-sm-12 col-xl-12 col-12">
                     <img src="./image/logo/chuong.webp" alt="">
-                    <a href="../index.html">MIỄN PHÍ VẬN CHUYỂN VỚI HÓA ĐƠN TỪ 299K</a>
+                    <a href="index.php?act=main_page">MIỄN PHÍ VẬN CHUYỂN VỚI HÓA ĐƠN TỪ 299K</a>
                 </div>
             </div>
             <!-- responsive_mobile -->
@@ -34,7 +34,7 @@
                     </div>
 
                     <div class="logo col-7 col-md-7 col-sm-7 col-xl-7">
-                        <a href="../index.html">
+                        <a href="index.php?act=main_page">
                             <img src="./image/Logo/logo.webp" alt="logo">
                         </a>
                     </div>
@@ -55,15 +55,17 @@
                 <!-- navbar -->
                 <div class="navbar row" id="main-menu">
                     <div class="col-12 col-md-12 col-sm-12 col-xl-12">
-                        <a href="../pages/new_collection.html">
+                        <a href="index.php?act=new_collection">
                             <span>NEW COLLECTION</span>
                         </a>
                     </div>
                     <div class="col-12 col-md-12 col-sm-12 col-xl-12">
-                        <span id="johnHenry">JOHN HENRY</span>
+                        <a href="index.php?act=john_henry"><span id="johnHenry">JOHN HENRY</span></a>
+
                     </div>
                     <div class="col-12 col-md-12 col-sm-12 col-xl-12">
-                        <span id="freelancer">FREELANCER</span>
+                        <a href="index.php?act=freelancer"><span id="freelancer">FREELANCER</span></a>
+
                     </div>
                     <div class="support">
                         <p class="sup_header">BẠN CẦN HỖ TRỢ?</p>
@@ -85,7 +87,7 @@
                         </div>
                     </div>
                     <div class="col-12 col-md-12 col-sm-12 col-xl-12">
-                        <a href="../pages/john_henry.html">Xem tất cả "JOHN HENRY"</a>
+                        <a href="index.php?act=john_henry">Xem tất cả "JOHN HENRY"</a>
                     </div>
                     <div class="col-12 col-md-12 col-sm-12 col-xl-12">
                         <span id="ao-jh">- ÁO JH</span>
@@ -226,14 +228,53 @@
                             Thông tin tài khoản
                         </div>
                         <div class="card-body">
-                            <span>Trịnh Bảo Quý</span>
-                            <a href="index.php?act=account">Tài khoản của tôi</a>
-                            <a href="./screen_logout.php">Đăng xuất</a>
-                        </div>
+                            <div class="card-body">
+                                <?php
+                                    require("config.php");
 
+                                    // Lấy thông tin từ biểu mẫu hoặc session
+                                    $user_email = $_SESSION['email']; // Thay thế bằng cách lấy từ session hoặc cách khác
+
+                                    // Thực hiện truy vấn SQL để lấy id dựa trên email
+                                    $sql_id = "SELECT user_id FROM users WHERE email = ?";
+
+                                    // Sử dụng prepared statement để tránh SQL injection
+                                    $stmt_id = $conn->prepare($sql_id);
+                                    $stmt_id->bind_param("s", $user_email);
+
+                                    // Thực hiện truy vấn
+                                    $stmt_id->execute();
+
+                                    // Lấy kết quả
+                                    $result_id = $stmt_id->get_result();
+
+                                    // Kiểm tra xem có dữ liệu trả về không
+                                    if ($result_id->num_rows > 0) {
+                                        $row_id = $result_id->fetch_assoc();
+                                        $this_id = $row_id['user_id'];
+
+                                        // Thực hiện truy vấn để lấy thông tin người dùng dựa trên id
+                                        $sql_name = "SELECT full_name FROM users WHERE user_id = $this_id";
+                                        $result_name = $conn->query($sql_name);
+
+                                        if ($result_name->num_rows > 0) {
+                                            $row_name = $result_name->fetch_assoc();
+                                            echo '<span>' . $row_name["full_name"] . '</span>';
+                                        } else {
+                                            echo "Không tìm thấy thông tin người dùng.";
+                                        }
+                                    } else {
+                                        echo "Không tìm thấy thông tin người dùng.";
+                                    }
+                                ?>
+                                <a href="index.php?act=account">Tài khoản của tôi</a>
+                                <a href="index.php?act=logout">Đăng xuất</a>
+                            </div>
+
+                        </div>
                     </div>
-                </div>
-                <!-- cart -->
+
+                </div><!-- cart -->
                 <div class="cart" id="car">
                     <div class="card">
                         <div class="card-header">Giỏ hàng</div>
@@ -269,7 +310,8 @@
                                 <div class="body">
                                     <ul>
                                         <li>
-                                            Sản phẩm mua được phép đổi trong vòng 7 ngày (tính từ ngày quý khách nhận
+                                            Sản phẩm mua được phép đổi trong vòng 7 ngày (tính từ ngày quý khách
+                                            nhận
                                             được hàng). Chúng tôi không chấp nhận hủy đơn hàng.
                                         </li>
                                         <li>
@@ -287,21 +329,21 @@
             <div class="container" id="res_web">
                 <div class="menu row">
                     <div class="logo col3 col-md-3 col-sm-3 col-xl-3">
-                        <a href="../index.html">
+                        <a href="index.php?act=main_page">
                             <img src="./image/Logo/logo.webp" alt="logo_web">
                         </a>
                     </div>
                     <div class="col-7 col-md-7 col-sm-7 col-xl-7">
                         <div class="navbar row">
                             <div class="col-4 col-md-4 col-sm-4 col-xl-4">
-                                <a href="./pages/new_collection.html">
+                                <a href="index.php?act=new_collection">
                                     <span>NEW COLLECTION</span>
                                 </a>
                             </div>
                             <div class="hien1 col-4 col-md-4 col-sm-4 col-xl-4">
                                 <div class="menu_item1">
-                                    <a href="./pages/john_henry.html">
-                                        <span>JONN HENRY</span>
+                                    <a href="index.php?act=john_henry">
+                                        <span>JOHN HENRY</span>
                                         <i class="bi bi-chevron-down"></i>
                                     </a>
                                     <div class="product-list">
@@ -377,7 +419,7 @@
                             </div>
                             <div class="hien1 col-4 col-md-4 col-sm-4 col-xl-4">
                                 <div class="menu_item2">
-                                    <a href="./pages/freelancer.html">
+                                    <a href="index.php?act=freelancer">
                                         <span>FREELANCER</span>
                                         <i class="bi bi-chevron-down"></i>
                                     </a>
@@ -455,11 +497,49 @@
                                     Thông tin tài khoản
                                 </div>
                                 <div class="card-body">
-                                    <span>Trịnh Bảo Quý</span>
+                                    <?php
+                                        require("config.php");
+
+                                        // Lấy thông tin từ biểu mẫu hoặc session
+                                        $user_email = $_SESSION['email']; // Thay thế bằng cách lấy từ session hoặc cách khác
+
+                                        // Thực hiện truy vấn SQL để lấy id dựa trên email
+                                        $sql_id = "SELECT user_id FROM users WHERE email = ?";
+
+                                        // Sử dụng prepared statement để tránh SQL injection
+                                        $stmt_id = $conn->prepare($sql_id);
+                                        $stmt_id->bind_param("s", $user_email);
+
+                                        // Thực hiện truy vấn
+                                        $stmt_id->execute();
+
+                                        // Lấy kết quả
+                                        $result_id = $stmt_id->get_result();
+
+                                        // Kiểm tra xem có dữ liệu trả về không
+                                        if ($result_id->num_rows > 0) {
+                                            $row_id = $result_id->fetch_assoc();
+                                            $this_id = $row_id['user_id'];
+
+                                            // Thực hiện truy vấn để lấy thông tin người dùng dựa trên id
+                                            $sql_name = "SELECT full_name FROM users WHERE user_id = $this_id";
+                                            $result_name = $conn->query($sql_name);
+
+                                            if ($result_name->num_rows > 0) {
+                                                $row_name = $result_name->fetch_assoc();
+                                                echo '<span>' . $row_name["full_name"] . '</span>';
+                                            } else {
+                                                echo "Không tìm thấy thông tin người dùng.";
+                                            }
+                                        } else {
+                                            echo "Không tìm thấy thông tin người dùng.";
+                                        }
+                                    ?>
                                     <a href="index.php?act=account">Tài khoản của tôi</a>
-                                    <a href="./screen_logout.php">Đăng xuất</a>
+                                    <a href="index.php?act=logout">Đăng xuất</a>
                                 </div>
                             </div>
+
                             <!-- giỏ hàng -->
                             <div class="cart col-4 col-md-4 col-sm-4 col-xl-4" id="cartIcon">
                                 <i class=" bi bi-bag "></i>
@@ -479,12 +559,12 @@
                                                 </tr>
                                                 <tr class="action-row">
                                                     <td>
-                                                        <a href="./pages/cart.html" class="linktocart button dark">
+                                                        <a href="index.php?act=cart" class="linktocart button dark">
                                                             <span>XEM GIỎ HÀNG</span>
                                                         </a>
                                                     </td>
                                                     <td>
-                                                        <a href="./pages/cart.html" class="linktocart button dark">
+                                                        <a href="index.php?act=cart" class="linktocart button dark">
                                                             <span>THANH TOÁN</span>
                                                         </a>
                                                     </td>
@@ -498,12 +578,14 @@
                                         <div class="body">
                                             <ul>
                                                 <li>
-                                                    Sản phẩm mua được phép đổi trong vòng 7 ngày (tính từ ngày quý
+                                                    Sản phẩm mua được phép đổi trong vòng 7 ngày (tính từ ngày
+                                                    quý
                                                     khách
                                                     nhận được hàng). Chúng tôi không chấp nhận hủy đơn hàng.
                                                 </li>
                                                 <li>
-                                                    Chính sách đổi trả này chỉ áp dụng đối với SẢN PHẨM NGUYÊN GIÁ,
+                                                    Chính sách đổi trả này chỉ áp dụng đối với SẢN PHẨM NGUYÊN
+                                                    GIÁ,
                                                     không áp dụng đối với các sản phẩm ƯU ĐÃI.
                                                 </li>
                                             </ul>
@@ -516,107 +598,108 @@
                 </div>
             </div>
         </div>
-        <script>
-        $(document).ready(function() {
-            //xử lý icon web nhỏ hơn 768px
+    </div>
+    <script>
+    $(document).ready(function() {
+        //xử lý icon web nhỏ hơn 768px
 
-            $('#toggle').click(function() {
-                $('#jh,#ao_jh,quan_jh,#phu_kien_jh, #free,#ao_free,#quan_free,#sea,#user,#car')
-                    .hide();
-                $('#main-menu').slideToggle();
-            });
-            $('#comeBack1').click(function() {
-                $('#sea, #user, #car,#jh').hide();
-                $('#main-menu').slideToggle();
-            });
-            $('#comeBack2').click(function() {
-                $('#sea, #user, #car,#free').hide();
-                $('#main-menu').slideToggle();
-            });
-            //xử lý john henry
-            $('#johnHenry').click(function() {
-                $('#sea, #user, #car,#main-menu').hide();
-                $('#jh').slideToggle();
-            });
-            $('#ao-jh').click(function() {
-                $('#sea, #user, #car,#jh').hide();
-                $('#ao_jh').slideToggle();
-            });
-            $('#quan-jh').click(function() {
-                $('#sea, #user, #car,#jh').hide();
-                $('#quan_jh').slideToggle();
-            });
-            $('#phu-kien-jh').click(function() {
-                $('#sea, #user, #car,#jh').hide();
-                $('#phu_kien_jh').slideToggle();
-            });
-            $('#comeBackJh1').click(function() {
-                $('#sea, #user, #car,#ao_jh').hide();
-                $('#jh').slideToggle();
-            });
-            $('#comeBackJh2').click(function() {
-                $('#sea, #user, #car,#quan_jh').hide();
-                $('#jh').slideToggle();
-            });
-            $('#comeBackJh3').click(function() {
-                $('#sea, #user, #car,#phu_kien_jh').hide();
-                $('#jh').slideToggle();
-            });
-            //xử lý freelancer
-            $('#freelancer').click(function() {
-                $('#sea, #user, #car,#main-menu').hide();
-                $('#free').slideToggle();
-            })
-            $('#ao-free').click(function() {
-                $('#sea, #user, #car,#free').hide();
-                $('#ao_free').slideToggle();
-            })
-            $('#quan-free').click(function() {
-                $('#sea, #user, #car,#free').hide();
-                $('#quan_free').slideToggle();
-            });
-            $('#comeBackFree1').click(function() {
-                $('#sea, #user, #car,#ao_free').hide();
-                $('#free').slideToggle();
-            });
-            $('#comeBackFree2').click(function() {
-                $('#sea, #user, #car,#quan_free').hide();
-                $('#free').slideToggle();
-            });
-            //xử lý icon
-            $('#search').click(function() {
-                $('#sea').slideToggle();
-                $('#user, #car,#main-menu,#jh,#free,#ao_jh,#quan_jh,#phu_kien_jh,#ao_free,#quan_free')
-                    .hide();
-            });
-
-            $('#login').click(function() {
-                $('#user').slideToggle();
-                $('#sea, #car,#main-menu,#jh,#free,#ao_jh,#quan_jh,#phu_kien_jh,#ao_free,#quan_free')
-                    .hide();
-            });
-
-            $('#cart').click(function() {
-                $('#car').slideToggle();
-                $('#sea, #user,#main-menu,#jh,#free,#ao_jh,#quan_jh,#phu_kien_jh,#ao_free,#quan_free')
-                    .hide();
-            });
-            //xử lý icon web màn hình lớn hơn 768px
-            $('#searchIcon').click(function() {
-                $('#userBox, #cartBox').hide();
-                $('#searchBox').slideToggle();
-            });
-            $('#loginIcon').click(function() {
-                $('#searchBox, #cartBox').hide();
-                $('#userBox').slideToggle();
-            });
-
-            $('#cartIcon').click(function() {
-                $('#userBox, #searchBox').hide();
-                $('#cartBox').slideToggle();
-            });
+        $('#toggle').click(function() {
+            $('#jh,#ao_jh,quan_jh,#phu_kien_jh, #free,#ao_free,#quan_free,#sea,#user,#car')
+                .hide();
+            $('#main-menu').slideToggle();
         });
-        </script>
+        $('#comeBack1').click(function() {
+            $('#sea, #user, #car,#jh').hide();
+            $('#main-menu').slideToggle();
+        });
+        $('#comeBack2').click(function() {
+            $('#sea, #user, #car,#free').hide();
+            $('#main-menu').slideToggle();
+        });
+        //xử lý john henry
+        $('#johnHenry').click(function() {
+            $('#sea, #user, #car,#main-menu').hide();
+            $('#jh').slideToggle();
+        });
+        $('#ao-jh').click(function() {
+            $('#sea, #user, #car,#jh').hide();
+            $('#ao_jh').slideToggle();
+        });
+        $('#quan-jh').click(function() {
+            $('#sea, #user, #car,#jh').hide();
+            $('#quan_jh').slideToggle();
+        });
+        $('#phu-kien-jh').click(function() {
+            $('#sea, #user, #car,#jh').hide();
+            $('#phu_kien_jh').slideToggle();
+        });
+        $('#comeBackJh1').click(function() {
+            $('#sea, #user, #car,#ao_jh').hide();
+            $('#jh').slideToggle();
+        });
+        $('#comeBackJh2').click(function() {
+            $('#sea, #user, #car,#quan_jh').hide();
+            $('#jh').slideToggle();
+        });
+        $('#comeBackJh3').click(function() {
+            $('#sea, #user, #car,#phu_kien_jh').hide();
+            $('#jh').slideToggle();
+        });
+        //xử lý freelancer
+        $('#freelancer').click(function() {
+            $('#sea, #user, #car,#main-menu').hide();
+            $('#free').slideToggle();
+        })
+        $('#ao-free').click(function() {
+            $('#sea, #user, #car,#free').hide();
+            $('#ao_free').slideToggle();
+        })
+        $('#quan-free').click(function() {
+            $('#sea, #user, #car,#free').hide();
+            $('#quan_free').slideToggle();
+        });
+        $('#comeBackFree1').click(function() {
+            $('#sea, #user, #car,#ao_free').hide();
+            $('#free').slideToggle();
+        });
+        $('#comeBackFree2').click(function() {
+            $('#sea, #user, #car,#quan_free').hide();
+            $('#free').slideToggle();
+        });
+        //xử lý icon
+        $('#search').click(function() {
+            $('#sea').slideToggle();
+            $('#user, #car,#main-menu,#jh,#free,#ao_jh,#quan_jh,#phu_kien_jh,#ao_free,#quan_free')
+                .hide();
+        });
+
+        $('#login').click(function() {
+            $('#user').slideToggle();
+            $('#sea, #car,#main-menu,#jh,#free,#ao_jh,#quan_jh,#phu_kien_jh,#ao_free,#quan_free')
+                .hide();
+        });
+
+        $('#cart').click(function() {
+            $('#car').slideToggle();
+            $('#sea, #user,#main-menu,#jh,#free,#ao_jh,#quan_jh,#phu_kien_jh,#ao_free,#quan_free')
+                .hide();
+        });
+        //xử lý icon web màn hình lớn hơn 768px
+        $('#searchIcon').click(function() {
+            $('#userBox, #cartBox').hide();
+            $('#searchBox').slideToggle();
+        });
+        $('#loginIcon').click(function() {
+            $('#searchBox, #cartBox').hide();
+            $('#userBox').slideToggle();
+        });
+
+        $('#cartIcon').click(function() {
+            $('#userBox, #searchBox').hide();
+            $('#cartBox').slideToggle();
+        });
+    });
+    </script>
     </div>
 </body>
 

@@ -27,7 +27,7 @@
                                         <a href="">Thông tin tài khoản</a>
                                     </li>
                                     <li>
-                                        <a href="">Đăng xuất</a>
+                                        <a href="index.php?act=logout">Đăng xuất</a>
                                     </li>
                                 </ul>
                             </div>
@@ -39,9 +39,50 @@
                         <div class="col-xs-12">
                             <p class="title-detail">Thông tin tài khoản</p>
                             <hr>
-                            <h2 class="name_account">Trịnh bảo Quý</h2>
-                            <span class="email">quytrinh439@gmail.com</span>
-                            <span class="phone">0987592443</span>
+                            <?php
+    require("config.php");
+
+    // Start the session
+    // session_start();
+
+    // Check if the user is logged in
+    if(isset($_SESSION['email'])) {
+        // Lấy thông tin từ biểu mẫu hoặc session
+        $user_email = $_SESSION['email']; // Thay thế bằng cách lấy từ session hoặc cách khác
+
+        // Thực hiện truy vấn SQL để lấy id dựa trên email
+        $sql_id = "SELECT user_id, full_name, gender, date_of_birth, email, phone FROM users WHERE email = ?";
+
+        // Sử dụng prepared statement để tránh SQL injection
+        $stmt_id = $conn->prepare($sql_id);
+        $stmt_id->bind_param("s", $user_email);
+
+        // Thực hiện truy vấn
+        $stmt_id->execute();
+
+        // Lấy kết quả
+        $result_id = $stmt_id->get_result();
+
+        // Kiểm tra xem có dữ liệu trả về không
+        if ($result_id->num_rows > 0) {
+            $row_id = $result_id->fetch_assoc();
+            echo '<h2 class="name_account">' . $row_id["full_name"] . '</h2>';
+            echo '<span>Giới tính: ' . $row_id["gender"] . '</span>';
+            echo '<br>';
+            echo '<span>Ngày đăng ký: ' . $row_id["date_of_birth"] . '</span>';
+            echo '<br>';
+            echo '<span>Email: ' . $row_id["email"] . '</span>';
+            echo  '<br>';
+            echo '<span>Phone: ' . $row_id["phone"] . '</span>';
+        } else {
+            echo "Không tìm thấy thông tin người dùng.";
+        }
+    } else {
+        echo "Người dùng chưa đăng nhập.";
+    }
+?>
+
+
                         </div>
                     </div>
                 </div>
