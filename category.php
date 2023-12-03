@@ -1,16 +1,16 @@
 <?php
-    require("../config.php");
+    require("config.php");
     session_start();
     //kiem tra xem dang nhap hay chua
     if(!$_SESSION["user"]){
-        header("location:  login_categry.php");
+        header("location:  login_category.php");
     }
     else{
         echo "Xin chao thanh vien " . $_SESSION["user"];
     }
     if(isset($_POST["logout"])){
         session_destroy();
-        header("location:  login.php");
+        header("location:  login_category.php");
     }
     //kiem tra xem nguoi dung da nhan nut them moi hay chua
     if(isset($_POST["insert"])){
@@ -147,7 +147,7 @@
                                     echo "<td>".$row["cate_name"]."</td>";
                                     echo "<td>".$st."</td>";
                                     echo "<td>";
-                                        echo "<a class='btn btn-warning' href='update_cate.php?task=update&id=".$row["cate_id"]."'>Sua</a>";
+                                        echo "<a class='btn btn-warning' href='update_news_category.php?task=update&id=".$row["cate_id"]."'>Sua</a>";
                                         echo "<a class='btn btn-danger' href='category.php?task=delete&id=".$row["cate_id"]."'>Xoa</a>";
                                     echo "</td>";
                                     echo "<td>";

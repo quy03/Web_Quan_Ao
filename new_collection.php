@@ -61,7 +61,8 @@
 
                     <div class="row">
                         <?php
-                                $result = mysqli_query($conn, 'select count(cate_id) as total from tbl_product');
+                                $product= 15;
+                                $result = mysqli_query($conn, "select count(product_id) as total from tbl_product where product_id = $product");
                                 $row = mysqli_fetch_assoc($result);
                                 $total_records = $row['total'];
                                 
@@ -85,8 +86,8 @@
                                 
                                 // Tìm Start
                                 $start = ($current_page - 1) * $limit;
-
-                                $sql_movie = "SELECT * FROM tbl_product WHERE product_id ORDER BY product_id DESC LIMIT $start,$limit ";
+                                $category_id = 15;
+                                $sql_movie = "SELECT * FROM tbl_product WHERE product_id = $category_id ORDER BY product_id DESC LIMIT $start,$limit ";
                                 $result_movies = mysqli_query($conn, $sql_movie);
                 
                                 if (mysqli_num_rows($result_movies) > 0) {
@@ -94,7 +95,7 @@
                                         echo"<div class='col-md-3 col-sm-6 col-xs-6 pro-loop col-5'>";
                                             echo "<div class='product-img'>";
                                             echo "<a href='product_details.php?task=update&id=".$movies["cate_id"]."'>";
-                                                    echo "<img src='" . $movies["intro_image"] . "' alt=''>";
+                                                    echo "<img style='height:459px' src='" . $movies["intro_image"] . "' alt=''>";
                                                     echo "</img>";
                                                 echo"</a>";
                                             echo "</div>";
@@ -102,12 +103,12 @@
                                                 echo"<div class ='box-pro-detail'>";
                                                     echo"<div class ='box-pro-prices'>";
                                                         echo "<p class='pro-price'>" ;
-                                                            echo "<a href='http://localhost/Btl_web/product_details.php' style='text-decoration: none';>";
-                                                                echo"<span>" . $movies['price']. "</span>" ;
+                                                            echo "<a href='product_details.php?task=update&id=".$movies["cate_id"]."' style='text-decoration: none';>";
+                                                                echo"<span>" . $movies['price'].'<span>đ</spam>'. "</span>" ;
                                                             echo"</a>";
                                                         echo"</p>";
                                                         echo"<h3 class='pro-name'>" ;
-                                                            echo "<a href='http://localhost/Btl_web/product_details.php' style='font-size: 17px';>" . $movies['fullname'] . "</a>";
+                                                            echo "<a href='product_details.php?task=update&id=".$movies["cate_id"]."' style='font-size: 26px';>" . $movies['fullname'] . "</a>";
                                                         echo "</h3>";
                                                     echo "</div>";
                                                 echo"</div>";

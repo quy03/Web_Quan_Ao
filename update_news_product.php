@@ -1,7 +1,10 @@
 <?php
-    require("../config.php");
+    require("config.php");
+    
     $this_id = $_GET['id'];
    
+
+    $sql = "SELECT *FROM tbl_product WHERE cate_id ='$this_id' ";
     $query = mysqli_query($conn, $sql);
     $row = mysqli_fetch_assoc($query);
     //khi nhaasn nuts luu lai
@@ -36,14 +39,23 @@
           } 
           else {
             if (move_uploaded_file($_FILES["upload_file"]["tmp_name"], $target_file)){
-                $sql = "UPDATE tbl_product SET product_id = '$cate_id', fullname='$name',content='$content',intro_image='$target_file',price='$price',size='$size',quantity='$quantity',post_date='$post_date',status='$status' 
-                WHERE cate_id =".$this_id;
-                
-                mysqli_query($conn, $sql);
-                header("location:news_product.php");
-            }
-        }
+
+
+
+        $sql = "UPDATE tbl_product SET product_id = '$cate_id', fullname='$name',content='$content',intro_image='$target_file',price='$price',size='$size',quantity='$quantity',post_date='$post_date',status='$status' 
+        WHERE cate_id =".$this_id;
+        
+        mysqli_query($conn, $sql);
+        header("location:news_product.php");
+
+
+
     }
+    }
+    }
+
+
+
 ?>
 
 

@@ -214,12 +214,14 @@
                 <!-- search -->
                 <div class="search" id="sea">
                     <p>Tìm Kiếm</p>
-                    <div class="search-box">
-                        <input type="text " class="form-control" placeholder="Tìm kiếm ">
-                        <button>
-                            <i class="bi bi-search "></i>
-                        </button>
-                    </div>
+                    <form action="search.php">
+                        <div class="search-box">
+                            <input type="text " class="form-control" placeholder="Tìm kiếm " name="search">
+                            <button onclick="performSearch() " name="search_product">
+                                <i class="bi bi-search "></i>
+                            </button>
+                        </div>
+                    </form>
                 </div>
                 <!-- info-user -->
                 <div class="info-user" id="user">
@@ -481,12 +483,14 @@
                             </div>
                             <div class="search-box card" id="searchBox">
                                 <h6 class="card-heart">TÌM KIẾM</h6>
-                                <div class="form-control search-input">
-                                    <input type="text " class="form-control" placeholder="Tìm kiếm ">
-                                    <button>
-                                        <i class="bi bi-search "></i>
-                                    </button>
-                                </div>
+                                <form action="search.php" method="get">
+                                    <div class="form-control search-input">
+                                        <input type="text " class="form-control" placeholder="Tìm kiếm " name="search">
+                                        <button onclick="performSearch() " name="search_product">
+                                            <i class="bi bi-search "></i>
+                                        </button>
+                                    </div>
+                                </form>
                             </div>
                             <!-- tài khoản -->
                             <div class="login col-4 col-md-4 col-sm-4 col-xl-4" id="loginIcon">

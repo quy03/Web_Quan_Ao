@@ -1,3 +1,6 @@
+.container img{
+    height: 459px;
+}
 .container a{
     text-decoration: none;
 }
@@ -23,8 +26,9 @@
 
 .container .row .product-detail span {
     color: #b4282b;
-    font-size: 14px;
+    font-size: 26px;
     font-weight: 700;
+    margin-bottom: 10px;
 }
 
 .container .row .product-detail .pro-name {
@@ -33,9 +37,10 @@
 }
 
 .container .row .product-detail a {
+    padding-top: 10px;
     color: #252a2b;
     font-family: Open Sans;
-    font-size: 14px;
+    font-size: 36px;
     font-weight: 500;
 }
 

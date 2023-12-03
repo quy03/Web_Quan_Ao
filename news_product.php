@@ -72,7 +72,7 @@
     .pagination {
         list-style: none;
         padding-top: 20px;
-        padding-left: 500px;
+        padding-left: 25%;
         margin-bottom: 200px
     }
 

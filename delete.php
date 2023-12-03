@@ -1,5 +1,5 @@
 <?php
-require("../config.php");
+require("config.php");
     $this_id = $_GET['id'];
     echo "tin tức đã bị  xóa với id là:  ";
     echo  $this_id;

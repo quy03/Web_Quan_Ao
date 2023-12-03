@@ -97,3 +97,12 @@
     line-height: 50px;
     text-align: center;
 }
+.fluid-container .cart-container .item h3 a{
+    color:#252a2b;
+    font-weight:700;
+}
+.fluid-container .cart-container .remote img{
+    color:#252a2b;
+    font-size:14px;
+    text-align:right;
+}

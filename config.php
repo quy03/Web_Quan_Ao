@@ -3,7 +3,7 @@
     $server = "localhost";
     $user="root";
     $pass="";
-    $db="csdl_web_ban_quan_ao";
+    $db="web_quan_ao";
 
     $conn = mysqli_connect($server,$user,$pass,$db);
     if (!$conn) {

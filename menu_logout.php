@@ -80,12 +80,12 @@
                 <!-- navbar -->
                 <div class="navbar row" id="main-menu">
                     <div class="col-12 col-md-12 col-sm-12 col-xl-12">
-                        <a href="../pages/new_collection.html">
+                        <a href="index.php?act=new_collection">
                             <span>NEW COLLECTION</span>
                         </a>
                     </div>
                     <div class="col-12 col-md-12 col-sm-12 col-xl-12">
-                        <span id="johnHenry">JOHN HENRY</span>
+                        span id="johnHenry">JOHN HENRY</span>
                     </div>
                     <div class="col-12 col-md-12 col-sm-12 col-xl-12">
                         <span id="freelancer">FREELANCER</span>
@@ -110,7 +110,7 @@
                         </div>
                     </div>
                     <div class="col-12 col-md-12 col-sm-12 col-xl-12">
-                        <a href="../pages/john_henry.html">Xem tất cả "JOHN HENRY"</a>
+                        <a href="index.php?act=john_henry">Xem tất cả "JOHN HENRY"</a>
                     </div>
                     <div class="col-12 col-md-12 col-sm-12 col-xl-12">
                         <span id="ao-jh">- ÁO JH</span>
@@ -184,7 +184,7 @@
                         </div>
                     </div>
                     <div class="col-12 col-md-12 col-sm-12 col-xl-12">
-                        <a href="../pages/freelancer.html">Xem tất cả "FREELANCER"</a>
+                        <a href="index.php?act=freelancer">Xem tất cả "FREELANCER"</a>
                     </div>
                     <div class="col-12 col-md-12 col-sm-12 col-xl-12">
                         <span id="ao-free">- ÁO FREELANCER</span>
@@ -354,13 +354,13 @@
                     <div class="col-7 col-md-7 col-sm-7 col-xl-7">
                         <div class="navbar row">
                             <div class="col-4 col-md-4 col-sm-4 col-xl-4">
-                                <a href="./pages/new_collection.html">
+                                <a href="index.php?act=new_collection">
                                     <span>NEW COLLECTION</span>
                                 </a>
                             </div>
                             <div class="hien1 col-4 col-md-4 col-sm-4 col-xl-4">
                                 <div class="menu_item1">
-                                    <a href="./pages/john_henry.html">
+                                    <a href="index.php?act=john_henry">
                                         <span>JONN HENRY</span>
                                         <i class="bi bi-chevron-down"></i>
                                     </a>
@@ -437,7 +437,7 @@
                             </div>
                             <div class="hien1 col-4 col-md-4 col-sm-4 col-xl-4">
                                 <div class="menu_item2">
-                                    <a href="./pages/freelancer.html">
+                                    <a href="index.php?act=freelancer">
                                         <span>FREELANCER</span>
                                         <i class="bi bi-chevron-down"></i>
                                     </a>

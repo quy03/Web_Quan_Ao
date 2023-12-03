@@ -1,3 +1,7 @@
+<?php
+ require("config.php");
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -15,12 +19,42 @@
     <script src="./js/app.js"></script>
     <title>Shop quần áo</title>
     <link rel="shortcut icon" href="./image/Logo/main-logo.png" type="image/x-icon">
+    <style>
+    .sortpagibar {
+        margin-top: 50px;
+        margin-bottom: 50px;
+        font-family: Arial, sans-serif;
+        padding: 10px;
+        border-radius: 5px;
+        text-align: center;
+    }
+
+    .sortpagibar a,
+    .sortpagibar span {
+        padding: 5px 10px;
+        margin: 0 2px;
+        text-decoration: none;
+        color: black;
+        border: 1px solid #611E1E;
+        border-radius: 3px;
+    }
+
+    .sortpagibar a:hover {
+        background-color: #ddd;
+    }
+
+    .sortpagibar span {
+        background-color: #611E1E;
+        color: white;
+        cursor: default;
+    }
+    </style>
 </head>
 
 <body>
     <div class="fluid-container">
         <!-- slide -->
-        <div style="margin-top: 72px;" id="carouselExampleIndicators" class="carousel slide">
+        <div id="carouselExampleIndicators" class="carousel slide">
             <div class="carousel-indicators">
                 <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"
                     aria-current="true" aria-label="Slide 1"></button>
@@ -75,126 +109,111 @@
                     </div>
                     <!-- hàng 2 -->
                     <div class="row row2 ">
-                        <div class="col-6 col-md-6 col-sm-6 col-xl-6">
+                        <div class="col-6 col-md-6 col-sm-12 col-xl-6">
                             <div class="row ">
-                                <div class="row hang_1 ">
-                                    <div class="col-6 col-md-6 col-sm-6 col-xl-6 left-product ">
-                                        <div class="product-block ">
-                                            <div class="product-img ">
-                                                <a href=" " class="yeuthichtraitim "></a>
-                                                <a href=" ">
-                                                    <img src="./image/sp_index/product4.webp " alt=" ">
-                                                </a>
-                                            </div>
-                                            <div class="product-detail ">
-                                                <div class="box-pro-prices ">
-                                                    <p class="pro-price ">
-                                                        <span>800,000đ</span>
-                                                    </p>
-                                                </div>
-                                                <h6 class="pro-name ">
-                                                    <a href="# " title="Áo Sơ Mi Nam WS23FH33P-LCBB ">
-                                                        <span class="truncate-text ">
-                                                            Áo Sơ Mi Nam WS23FH33P-LCBB
-                                                        </span>
-                                                    </a>
-                                                </h6>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-6 col-md-6 col-sm-6 col-xl-6  left-product ">
-                                        <div class="product-block ">
-                                            <div class="product-img ">
-                                                <a href=" " class="yeuthichtraitim "></a>
-                                                <a href=" ">
-                                                    <img src="./image/sp_index/product5.webp " alt=" ">
-                                                </a>
-                                            </div>
-                                            <div class="product-detail ">
-                                                <div class="box-pro-prices ">
-                                                    <p class="pro-price ">
-                                                        <span>700,000đ</span>
-                                                    </p>
-                                                </div>
-                                                <h6 class="pro-name ">
-                                                    <a href="# " title="Áo Sơ Mi Nam Tay Dài WS23SS03P-LC ">
-                                                        <span class="truncate-text ">Áo Sơ Mi Nam Tay Dài
-                                                            WS23SS03P-LC</span>
-                                                    </a>
-                                                </h6>
-
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="row hang_2 ">
-                                    <div class="col-6 col-md-6 col-sm-6 col-xl-6 left-product ">
-                                        <div class="product-block ">
-                                            <div class="product-img ">
-                                                <a href=" " class="yeuthichtraitim "></a>
-                                                <a href=" ">
-                                                    <img src="./image/sp_index/product6.webp " alt=" ">
-                                                </a>
-                                            </div>
-                                            <div class="product-detail ">
-                                                <div class="box-pro-prices ">
-                                                    <p class="pro-price ">
-                                                        <span>700,000đ</span>
-                                                    </p>
-                                                </div>
-                                                <h6 class="pro-name ">
-                                                    <a href="# " title="Áo Sơ Mi Nam WS23FH44C-SDBB ">
-                                                        <span class="truncate-text ">Áo Sơ Mi Nam WS23FH44C-SDBB</span>
-                                                    </a>
-                                                </h6>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-6 col-md-6 col-sm-6 col-xl-6 left-product ">
-                                        <div class="product-block ">
-                                            <div class="product-img ">
-                                                <a href=" " class="yeuthichtraitim "></a>
-                                                <a href=" ">
-                                                    <img src="./image/sp_index/product7.webp " alt=" ">
-                                                </a>
-                                            </div>
-                                            <div class="product-detail ">
-                                                <div class="box-pro-prices ">
-                                                    <p class="pro-price ">
-                                                        <span>700,000đ</span>
-                                                    </p>
-                                                </div>
-                                                <h6 class="pro-name ">
-                                                    <a href="# " title="Áo Polo Nam KS23FH40C-SCWK ">
-                                                        <span class="truncate-text ">Áo Polo Nam KS23FH40C-SCWK</span>
-                                                    </a>
-                                                </h6>
-                                            </div>
-                                        </div>
-                                    </div>
+                                <div class='row hang_1'>
+                                    <?php
+                                        $result = mysqli_query($conn, 'select count(cate_id) as total from tbl_product');
+                                        $row = mysqli_fetch_assoc($result);
+                                        $total_records = $row['total'];
+                                        
+                                        
+                                        // BƯỚC 3: TÌM LIMIT VÀ CURRENT_PAGE
+                                        $current_page = isset($_GET['page']) ? $_GET['page'] : 1;
+                                        $limit = 4;
+        
+                                        
+                                        // BƯỚC 4: TÍNH TOÁN TOTAL_PAGE VÀ START
+                                        // tổng số trang
+                                        $total_page = ceil($total_records / $limit);
+        
+                                        if ($current_page > $total_page){
+                                            $current_page = $total_page;
+                                        }
+                                        else if ($current_page < 1){
+                                            $current_page = 1;
+                                        }
+        
+                                        
+                                        // Tìm Start
+                                        $start = ($current_page - 1) * $limit;
+                                        $sql_movie = "SELECT * FROM tbl_product WHERE product_id ORDER BY cate_id DESC LIMIT $start,$limit ";
+                                        $result_movies = mysqli_query($conn, $sql_movie);
+                                        if(mysqli_num_rows($result_movies) > 0){
+                                            while($movies = mysqli_fetch_assoc($result_movies)){
+                                                    echo"<div class='col-6 col-md-6 col-sm-6 col-xl-6 left-product '>";
+                                                        echo"<div class='product-block '>";
+                                                            echo"<div class='product-img '>";
+                                                                echo"<a href=' '>";
+                                                                    echo "<img style='height: 459px' src='" . $movies["intro_image"] . "' alt=''>";
+                                                                    echo "</img>";
+                                                                echo"</a>";
+                                                            echo"</div>";
+                                                            echo"<div class='product-detail '>";
+                                                                echo"<div class='box-pro-prices '>";
+                                                                    echo"<p class='pro-price '>";
+                                                                        echo"<span>". $movies['price'] ."</span>";
+                                                                    echo"</p>";
+                                                                echo"</div>";
+                                                                echo"<h6 class='pro-name '>";
+                                                                    echo"<a href=''>";
+                                                                        echo"<span style='color:black;' class='truncate-text '>". $movies['fullname'] ."</span>";
+                                                                    echo"</a>";
+                                                                echo"</h6>";
+                                                            echo"</div>";
+                                                        echo"</div>";
+                                                    echo"</div>";
+                                            }
+                                        }
+                                    ?>
                                 </div>
                             </div>
                         </div>
-                        <div class="col-6 col-md-6 col-sm-6 col-xl-6">
-                            <a href=" ">
-                                <img src="./image/sp_index/product8.webp " alt=" ">
+                        <div class="col-6 col-md-6 col-sm-12 col-xl-6">
+                            <a href="index.php?act=new_collection">
+                                <img style="height: 90%" src=" ./image/sp_index/product8.webp " alt=" ">
                             </a>
                         </div>
                     </div>
-                    <!-- thêm sản phẩm mới -->
-                    <div class="text-center ">
-                        <a href="# " class="doxemthem ">Xem thêm sản phẩm mới</a>
+
+                    <div class=" sortpagibar pagi clearfix text-center">
+                        <?php 
+                                        // PHẦN HIỂN THỊ PHÂN TRANG
+                                        // BƯỚC 7: HIỂN THỊ PHÂN TRANG
+                
+                                        // nếu current_page > 1 và total_page > 1 mới hiển thị nút prev
+                                        if ($current_page > 1 && $total_page > 1){
+                                            echo '<a href="index.php?page='.($current_page-1).'">Truoc</a>  ';
+                                        }
+                                        
+                                        // Lặp khoảng giữa
+                                        for ($i = 1; $i <= $total_page; $i++){
+                                            // Nếu là trang hiện tại thì hiển thị thẻ span
+                                            // ngược lại hiển thị thẻ a
+                                            if ($i == $current_page){
+                                                echo '<span>'.$i.'</span>  ';
+                                            }
+                                            else{
+                                                echo '<a href="index.php?page='.$i.'">'.$i.'</a>  ';
+                                            }
+                                        }
+                                        
+                                        // nếu current_page < $total_page và total_page > 1 mới hiển thị nút prev
+                                        if ($current_page < $total_page && $total_page > 1){
+                                            echo '<a href="index.php?page='.($current_page+1).'">Sau</a>  ';
+                                        }
+                                ?>
                     </div>
                     <!-- mô tả sản phẩm -->
                     <div class="row ">
-                        <div class="col-6 col-md-6 col-sm-6 col-xl-6 ">
+                        <div class="col-6 col-md-6 col-sm-12 col-xl-6 ">
                             <div class="motasanphamlon ">
                                 <a href="# ">
-                                    <img src="./image/sp_index/product9.webp " alt=" ">
+                                    <img style="margin-bottom: 10px;" src="./image/sp_index/product9.webp " alt=" ">
                                 </a>
                             </div>
                         </div>
-                        <div class="col-6 col-md-6 col-sm-6 col-xl-6 ">
+                        <div class="col-6 col-md-6 col-sm-12 col-xl-6 ">
                             <div class="motasanphamnho ">
                                 <div class="row ">
                                     <div class="col-6 col-md-6 col-sm-6 col-xl-6  p1 ">
@@ -230,10 +249,13 @@
                         <!-- text -->
                         <div class="text-center ">
                             <p class="text ">
-                                Với thiết kế đơn giản nhưng tinh tế, đồng thời trang phục Freelancer mang đến cho người
-                                mặc những ưu điểm vượt bậc: . Được tạo kiểu để khéo léo che đi những khuyết điểm trên cơ
+                                Với thiết kế đơn giản nhưng tinh tế, đồng thời trang phục Freelancer mang đến cho
+                                người
+                                mặc những ưu điểm vượt bậc: . Được tạo kiểu để khéo léo che đi những khuyết điểm
+                                trên cơ
                                 thể . Có thể mix-match biến hóa nhiều kiểu mặc chỉ từ những items quen thuộc
-                                . Luôn thời trang và không bao giờ lỗi mốt . Giá hợp lý cho sản phẩm chất lượng tuyệt
+                                . Luôn thời trang và không bao giờ lỗi mốt . Giá hợp lý cho sản phẩm chất lượng
+                                tuyệt
                                 vời . Tiết kiệm thời gian trong việc giặt ủi, phối đồ, cực dễ mặc và phù hợp với mọi
                                 phong cách Một Freelancer HOÀN TOÀN MỚI đang chờ
                                 bạn khám phá!
@@ -309,9 +331,12 @@
                                     <div class=" text ">
                                         <h3>Hệ Thống Cửa Hàng</h3>
                                         <div class=" doanvan ">
-                                            Hiện nay thương hiệu JOHN HENRY & FREELANCER đã có mặt tại hầu hết các tỉnh,
-                                            thành phố trên toàn quốc. Không gian mua sắm thời trang hàng hiệu đẳng cấp,
-                                            sang trọng nhưng cũng không kém phần thoải mái, tiện nghi là điều quý khách
+                                            Hiện nay thương hiệu JOHN HENRY & FREELANCER đã có mặt tại hầu hết các
+                                            tỉnh,
+                                            thành phố trên toàn quốc. Không gian mua sắm thời trang hàng hiệu đẳng
+                                            cấp,
+                                            sang trọng nhưng cũng không kém phần thoải mái, tiện nghi là điều quý
+                                            khách
                                             hàng sẽ cảm nhận được
                                             khi ghé thăm bất cứ cửa hàng nào của JOHN HENRY.
                                         </div>
