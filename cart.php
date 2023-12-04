@@ -35,19 +35,12 @@
                         <div class="cart-container">
                             <div class="expanded-message">
                                 <table class="table-cart">
-                                    <thead>
-                                        <tr>
-                                            <!-- <th class="image">&nbsp;</th> -->
-                                            <!-- <th class="item">Tên sản phẩm</th> -->
-                                            <!-- <th class="remove">&nbsp;</th> -->
-                                        </tr>
-                                    </thead>
                                     <tbody>
                                         <tr class="line-item-container" data-variant-id="">
                                             <td class="image">
                                                 <div class="product_image">
                                                     <a href="">
-                                                        <img src="  //product.hstatic.net/1000402464/product/ks23fh53c-ls_blue____2__8d313764d57d46819d62cf899539f955_medium.jpg"
+                                                        <img src="//product.hstatic.net/1000402464/product/ks23fh53c-ls_blue____2__8d313764d57d46819d62cf899539f955_medium.jpg"
                                                             alt="Áo Polo KS23FH53C-LS">
                                                     </a>
                                                 </div>
@@ -73,7 +66,7 @@
                                                 </p>
                                             </td>
                                             <td class="remove">
-                                                <a href="/cart/change?line=1&amp;quantity=0" class="cart">
+                                                <a href="" class=" cart">
                                                     <img src="
                                                     //theme.hstatic.net/1000402464/1000724557/14/ic_close.png?v=1643">
                                                 </a>

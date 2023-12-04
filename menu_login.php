@@ -60,12 +60,11 @@
                         </a>
                     </div>
                     <div class="col-12 col-md-12 col-sm-12 col-xl-12">
-                        <a href="index.php?act=john_henry"><span id="johnHenry">JOHN HENRY</span></a>
+                        <span id="johnHenry">JOHN HENRY</span>
 
                     </div>
                     <div class="col-12 col-md-12 col-sm-12 col-xl-12">
-                        <a href="index.php?act=freelancer"><span id="freelancer">FREELANCER</span></a>
-
+                        <span id="freelancer">FREELANCER</span>
                     </div>
                     <div class="support">
                         <p class="sup_header">BẠN CẦN HỖ TRỢ?</p>
@@ -293,12 +292,12 @@
                                         </tr>
                                         <tr class="action-row">
                                             <td>
-                                                <a href="./pages/cart.html" class="linktocart button dark">
+                                                <a href="index.php?act=cart" class="linktocart button dark">
                                                     <span>XEM GIỎ HÀNG</span>
                                                 </a>
                                             </td>
                                             <td>
-                                                <a href="./pages/cart.html" class="linktocart button dark">
+                                                <a href="index.php?act=cart" class="linktocart button dark">
                                                     <span>THANH TOÁN</span>
                                                 </a>
                                             </td>

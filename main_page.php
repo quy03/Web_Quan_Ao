@@ -109,7 +109,7 @@
                     </div>
                     <!-- hàng 2 -->
                     <div class="row row2 ">
-                        <div class="col-6 col-md-6 col-sm-12 col-xl-6">
+                        <div class="col-md-6 col-sm-12">
                             <div class="row ">
                                 <div class='row hang_1'>
                                     <?php
@@ -169,7 +169,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-6 col-md-6 col-sm-12 col-xl-6">
+                        <div class="col-md-6 col-sm-12">
                             <a href="index.php?act=new_collection">
                                 <img style="height: 90%" src=" ./image/sp_index/product8.webp " alt=" ">
                             </a>
