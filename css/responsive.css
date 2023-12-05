@@ -1,4 +1,5 @@
 @media (max-width: 575px) {
+    
     #san_pham .motasanphamnho2 .an_duoi1{
         display: none;
     }
@@ -43,7 +44,7 @@
 }
 @media (max-width: 767.98px) {
     /* .carousel{
-        margin-top: 113px;
+        margin-top: 104px;
     } */
     #toggle {
         display: block;
@@ -94,7 +95,7 @@
 
 @media (min-width: 768px) and (max-width: 1199.98px) {
     /* .carousel{
-        margin-top: 121px;
+        margin-top: 65px;
     } */
     .fluid-container .container .menu .logo img {
         max-width: 100%;
@@ -136,6 +137,9 @@
 }
 
 @media (min-width: 1200px) {
+    /* .carousel{
+        margin-top: 72px;
+    } */
     .fluid-container .container .menu .navbar .hien1 .menu_item1 .product-list {
         left: -85%;
         width: 265%;

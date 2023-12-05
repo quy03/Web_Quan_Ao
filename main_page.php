@@ -109,7 +109,7 @@
                     </div>
                     <!-- hàng 2 -->
                     <div class="row row2 ">
-                        <div class="col-md-6 col-sm-12">
+                        <div class="col-6 col-md-6 col-sm-12 col-xl-6">
                             <div class="row ">
                                 <div class='row hang_1'>
                                     <?php
@@ -141,35 +141,37 @@
                                         $result_movies = mysqli_query($conn, $sql_movie);
                                         if(mysqli_num_rows($result_movies) > 0){
                                             while($movies = mysqli_fetch_assoc($result_movies)){
-                                                    echo"<div class='col-6 col-md-6 col-sm-6 col-xl-6 left-product '>";
-                                                        echo"<div class='product-block '>";
-                                                            echo"<div class='product-img '>";
-                                                                echo"<a href=' '>";
-                                                                    echo "<img style='height: 459px' src='" . $movies["intro_image"] . "' alt=''>";
-                                                                    echo "</img>";
-                                                                echo"</a>";
-                                                            echo"</div>";
-                                                            echo"<div class='product-detail '>";
-                                                                echo"<div class='box-pro-prices '>";
-                                                                    echo"<p class='pro-price '>";
+                                                echo"<div class='col-6 col-md-6 col-sm-6 col-xl-6 left-product '>";
+                                                    echo"<div class='product-block '>";
+                                                        echo"<div class='product-img '>";
+                                                            echo"<a href='product_details.php?task=update&id=".$movies["cate_id"]."'>";
+                                                                echo "<img style='height: 459px' src='" . $movies["intro_image"] . "' alt=''>";
+                                                                echo "</img>";
+                                                            echo"</a>";
+                                                        echo"</div>";
+                                                        echo"<div class='product-detail '>";
+                                                            echo"<div class='box-pro-prices '>";
+                                                                echo"<p class='pro-price '>";
+                                                                    echo"<a href='product_details.php?task=update&id=".$movies["cate_id"]."' style='color: #820012;'>";
                                                                         echo"<span>". $movies['price'] ."</span>";
-                                                                    echo"</p>";
-                                                                echo"</div>";
-                                                                echo"<h6 class='pro-name '>";
-                                                                    echo"<a href=''>";
-                                                                        echo"<span style='color:black;' class='truncate-text '>". $movies['fullname'] ."</span>";
                                                                     echo"</a>";
-                                                                echo"</h6>";
+                                                                echo"</p>";
                                                             echo"</div>";
+                                                            echo"<h6 class='pro-name '>";
+                                                                echo"<a href='product_details.php?task=update&id=".$movies["cate_id"]."'>";
+                                                                    echo"<span style='color:black;' class='truncate-text '>". $movies['fullname'] ."</span>";
+                                                                echo"</a>";
+                                                            echo"</h6>";
                                                         echo"</div>";
                                                     echo"</div>";
+                                                echo"</div>";
                                             }
                                         }
                                     ?>
                                 </div>
                             </div>
                         </div>
-                        <div class="col-md-6 col-sm-12">
+                        <div class="col-6 col-md-6 col-sm-12 col-xl-6">
                             <a href="index.php?act=new_collection">
                                 <img style="height: 90%" src=" ./image/sp_index/product8.webp " alt=" ">
                             </a>
